@@ -33,7 +33,7 @@
                 android:layout_marginTop="100dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:hint="Masukan Kode Tilang Anda"/>
+                android:hint="Masukan Kode Tilang Anda TUr" />
 
             <Button
                 android:layout_width="match_parent"
