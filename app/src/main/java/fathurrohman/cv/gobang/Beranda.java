@@ -3,9 +3,6 @@ package fathurrohman.cv.gobang;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -14,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+
+import androidx.fragment.app.Fragment;
 
 
 /**
@@ -36,6 +35,8 @@ public class Beranda extends Fragment {
         View v = inflater.inflate(R.layout.fragment_beranda, container, false);
         kode = v.findViewById(R.id.etKodeTilang);
         cari = v.findViewById(R.id.btnCari);
+
+        new Bantuan(getActivity()).swal_basic("awww");
 
         cari.setOnClickListener(new View.OnClickListener() {
             @Override
