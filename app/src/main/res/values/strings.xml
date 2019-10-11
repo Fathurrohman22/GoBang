@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">GoBang</string>
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">LANJUT</string>
+    <string name="skip">LEWATI</string>
+    <string name="start">SELESAI</string>
+
+    <string name="slide_1_title">GO-BANG</string>
+    <string name="slide_1_desc">Deskripsi GO-BANG</string>
+
+    <string name="slide_2_title">Gambar</string>
+    <string name="slide_2_desc">Aplikasi ini dilengkapi dengan gambar agar mudah dipahami.</string>
+
+    <string name="slide_3_title">Deskripsi</string>
+    <string name="slide_3_desc">Selain dilengkapi dengan gambar, dilengkapi pula dengan deskripsi penjelasan.</string>
+
+    <string name="slide_4_title">Menu Slider</string>
+    <string name="slide_4_desc">Pengguna dapat membuka halaman lain dengan hanya menggesernya tanpa harus keluar dari halaman terpilih.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nomor_tilang">Nomor Tilang</string>
+    <string name="d221098">D221098</string>
+    <string name="nama">Nama</string>
+    <string name="fathurrohman">Fathurrohman</string>
+    <string name="jenis_kendaraan">Jenis Kendaraan</string>
+    <string name="sepeda_motor">Sepeda Motor</string>
+    <string name="barang_bukti">Barang Bukti</string>
+    <string name="stnk">STNK</string>
+    <string name="denda">Denda</string>
+    <string name="rp">Rp 51.000</string>
+    <string name="_22_oktober_2019">22 Oktober 2019</string>
+    <string name="nik">NIK</string>
+    <string name="detail">Detail Pembayaran</string>
+</resources>
