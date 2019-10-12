@@ -89,17 +89,17 @@
                 android:layout_alignLeft="@+id/tvDesc"
                 android:layout_marginRight="20dp"/>
 
-            <TextView
-                android:id="@+id/tvMyArticle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tvDesc1"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:text="My Article"
-                android:textColor="@color/colorAccent"
-                android:textStyle="bold"
-                android:textSize="14dp"/>
+            <!--            <TextView-->
+            <!--                android:id="@+id/tvMyArticle"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_below="@+id/tvDesc1"-->
+            <!--                android:layout_marginTop="20dp"-->
+            <!--                android:layout_marginLeft="20dp"-->
+            <!--                android:text="My Article"-->
+            <!--                android:textColor="@color/colorAccent"-->
+            <!--                android:textStyle="bold"-->
+            <!--                android:textSize="14dp"/>-->
 
             <!--<androidx.recyclerview.widget.RecyclerView-->
                 <!--android:id="@+id/rvMyArticle"-->
