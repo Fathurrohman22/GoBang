@@ -52,7 +52,14 @@ public class Bantuan {
         new SweetAlertDialog(context, SweetAlertDialog.SUCCESS_TYPE)
                 .setTitleText("Peringatan")
                 .setContentText(pesan)
+////                .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+////                    @Override
+////                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+////                        Intent
+////                    }
+//                })
                 .show();
+
     }
 
     public SweetAlertDialog swal_loading(String pesan) {
