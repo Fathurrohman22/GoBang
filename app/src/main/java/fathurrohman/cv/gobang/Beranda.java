@@ -36,6 +36,8 @@ public class Beranda extends Fragment {
         kode = v.findViewById(R.id.etKodeTilang);
         cari = v.findViewById(R.id.btnCari);
 
+        new Bantuan(getActivity()).swal_basic("awww");
+
         cari.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
