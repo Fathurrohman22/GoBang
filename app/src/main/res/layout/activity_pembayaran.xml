@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".DetailData">
+    tools:context=".Pembayaran">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -57,13 +57,13 @@
                         android:layout_width="32dp"
                         android:layout_height="32dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_list" />
+                        android:src="@drawable/ic_cash" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:text="Data Ditemukan"
+                        android:text="GoBang Payment"
                         android:textAlignment="center"
                         android:textColor="@color/colorPrimary"
                         android:textSize="20sp"
@@ -73,13 +73,13 @@
 
             </RelativeLayout>
 
-            <TextView
-                android:id="@+id/tvCek"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Silahkan periksa data di bawah ini"
-                android:textAlignment="center"
-                android:textColor="@color/colorBlack" />
+            <!--            <TextView-->
+            <!--                android:id="@+id/tvCek"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Silahkan periksa data di bawah ini"-->
+            <!--                android:textAlignment="center"-->
+            <!--                android:textColor="@color/colorBlack" />-->
 
 
             <LinearLayout
@@ -103,104 +103,114 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/nomor_tilang"
+                        android:text="Total Pembayaran"
                         android:textColor="@color/colorBlack"
-                        android:textSize="10sp" />
+                        android:textSize="12sp" />
+
 
                     <TextView
-                        android:id="@+id/tvidTilang"
+                        android:id="@+id/tvidTotal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingTop="8dp"
                         android:paddingBottom="8dp"
-                        android:text="@string/d221098"
+                        android:text="Rp 71.000"
                         android:textColor="@color/colorBlack"
-                        android:textSize="14sp" />
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tvJudulDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/detail"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerInParent="true"
+                            android:text="Denda"
+                            android:textColor="@color/colorBlack" />
+
+                        <TextView
+                            android:id="@+id/tvNominal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:text="@string/rp"
+                            android:textColor="@color/colorBlack" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerInParent="true"
+                            android:text="Biaya Antar"
+                            android:textColor="@color/colorBlack" />
+
+                        <TextView
+                            android:id="@+id/tvAntar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:text="Rp 20.000"
+                            android:textColor="@color/colorBlack" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp">
+
+                    </RelativeLayout>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/nama"
+                        android:layout_marginTop="10dp"
+                        android:text="Pilih Metode Pembayaran"
                         android:textColor="@color/colorBlack"
-                        android:textSize="10sp" />
+                        android:textSize="12sp" />
 
-                    <TextView
-                        android:id="@+id/tvNama"
+                    <RadioGroup
+                        android:id="@+id/rgBayar"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="8dp"
-                        android:paddingBottom="8dp"
-                        android:text="@string/fathurrohman"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="14sp" />
+                        android:layout_height="match_parent">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/jenis_kendaraan"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="10sp" />
+                        <RadioButton
+                            android:id="@+id/rbBayarDitempat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="10sp"
+                            android:text="Bayar Ditempat" />
 
-                    <TextView
-                        android:id="@+id/tvJenisKendaraan"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="8dp"
-                        android:paddingBottom="8dp"
-                        android:text="@string/sepeda_motor"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="14sp" />
+                        <RadioButton
+                            android:id="@+id/rbTransfer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="10sp"
+                            android:text="Transfer" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/barang_bukti"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="10sp" />
-
-                    <TextView
-                        android:id="@+id/tvBarangBukti"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="8dp"
-                        android:paddingBottom="8dp"
-                        android:text="@string/stnk"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/denda"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="10sp" />
-
-                    <TextView
-                        android:id="@+id/tvDenda"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="8dp"
-                        android:paddingBottom="8dp"
-                        android:text="@string/rp"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Tanggal Sidang"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="10sp" />
-
-                    <TextView
-                        android:id="@+id/tvTglSidang"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="8dp"
-                        android:paddingBottom="8dp"
-                        android:text="@string/_22_oktober_2019"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="14sp" />
+                    </RadioGroup>
 
 
                 </LinearLayout>
@@ -222,45 +232,15 @@
                     android:layout_marginTop="16dp"
                     android:textColor="@color/colorWhite"
                     android:id="@+id/btnLanjut"
-                    android:text="Pesan"
-                    android:background="@drawable/button_effect"/>
+                    android:text="Selesai"
+                    android:background="@drawable/button_effect" />
 
             </LinearLayout>
-
 
 
         </LinearLayout>
 
     </ScrollView>
 
-    <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Nomor Tilang"/>-->
-
-    <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Nama"/>-->
-
-    <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Jenis Kendaraan"/>-->
-
-    <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Barang Bukti"/>-->
-
-    <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Status"/>-->
-
-    <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Tanggal Sidang"/>-->
 
 </LinearLayout>

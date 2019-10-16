@@ -1,15 +1,17 @@
 package fathurrohman.cv.gobang;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class DetailData extends AppCompatActivity {
 
-    Button lanjut, ulang;
+    Button lanjut;
+    ImageView kembali;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +19,7 @@ public class DetailData extends AppCompatActivity {
         setContentView(R.layout.activity_detail_data);
 
         lanjut = findViewById(R.id.btnLanjut);
-        ulang = findViewById(R.id.btnUlangi);
+        kembali = findViewById(R.id.btnClose);
 
         lanjut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,12 +29,11 @@ public class DetailData extends AppCompatActivity {
             }
         });
 
-        ulang.setOnClickListener(new View.OnClickListener() {
+        kembali.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent ulang = new Intent(DetailData.this, MainActivity.class);
-                ulang.putExtra("Beranda", 0);
-                startActivity(ulang);
+            public void onClick(View v) {
+                Intent kembali = new Intent(DetailData.this, MainActivity.class);
+                startActivity(kembali);
             }
         });
     }
