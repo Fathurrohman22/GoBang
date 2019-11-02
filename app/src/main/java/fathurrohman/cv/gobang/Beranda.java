@@ -36,7 +36,7 @@ public class Beranda extends Fragment {
         kode = v.findViewById(R.id.etKodeTilang);
         cari = v.findViewById(R.id.btnCari);
 
-        new Bantuan(getActivity()).swal_basic("awww");
+//        new Bantuan(getActivity()).swal_basic("awww");
 
         cari.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,9 +67,7 @@ public class Beranda extends Fragment {
         String Kode  = kode.getText().toString().trim();
         if(TextUtils.isEmpty(Kode)){
                 new Bantuan(getActivity()).swal_warning("Masukkan Kode Tilang");
-        }else if("D221098".equalsIgnoreCase(Kode)){
-//            new Bantuan(getActivity()).swal_sukses("Data Ditemukan");
-
+        } else if ("12345".equalsIgnoreCase(Kode)) {
             Intent i = new Intent(getActivity(), DetailData.class);
             startActivity(i);
         }else {
