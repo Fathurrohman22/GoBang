@@ -12,7 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".Barcode"></activity>
+        <activity android:name=".CaraPakai"></activity>
+        <activity android:name=".CaraBayar" />
+        <activity android:name=".PosGiro" />
+        <activity android:name=".Lacak" />
+        <activity android:name=".Barcode" />
         <activity android:name=".Pembayaran" />
         <activity android:name=".ValidasiData" />
         <activity android:name=".Pemesanan" />
