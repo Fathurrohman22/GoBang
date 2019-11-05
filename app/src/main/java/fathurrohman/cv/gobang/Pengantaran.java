@@ -8,9 +8,7 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import cn.iwgang.countdownview.CountdownView;
-
-public class Pembayaran extends AppCompatActivity {
+public class Pengantaran extends AppCompatActivity {
 
     Button lanjut;
     ImageView silang;
@@ -18,32 +16,28 @@ public class Pembayaran extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pembayaran);
-
-        CountdownView mCvCountdownView = (CountdownView) findViewById(R.id.countdown);
-        mCvCountdownView.start(86400000);
-        for (int time = 0; time < 1000; time++) {
-            mCvCountdownView.updateShow(time);
-        }
+        setContentView(R.layout.activity_pengantaran);
 
         lanjut = findViewById(R.id.btnLanjut);
         silang = findViewById(R.id.btnClose);
 
         lanjut.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent lanjut = new Intent(Pembayaran.this, ResiKirim.class);
+            public void onClick(View view) {
+                Intent lanjut = new Intent(Pengantaran.this, Pembayaran.class);
                 startActivity(lanjut);
+                finish();
             }
         });
+
 
         silang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent kembali = new Intent(Pembayaran.this, Pemesanan.class);
+                Intent kembali = new Intent(Pengantaran.this, Pemesanan.class);
                 startActivity(kembali);
+                finish();
             }
         });
     }
-
 }

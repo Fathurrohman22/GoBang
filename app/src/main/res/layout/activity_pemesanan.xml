@@ -103,6 +103,23 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:text="@string/nomor_tilang"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/tvidTilang"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/d221098"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="@string/nama"
                         android:textColor="@color/colorBlack"
                         android:textSize="10sp" />
@@ -113,104 +130,76 @@
                         android:layout_height="wrap_content"
                         android:paddingTop="8dp"
                         android:paddingBottom="8dp"
-                        android:hint="Masukkan Nama"
-                        android:inputType="text"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/nik"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="10sp" />
-
-                    <EditText
-                        android:id="@+id/etNik"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="8dp"
-                        android:paddingBottom="8dp"
-                        android:hint="NIK harus sesuai dengan KTP"
+                        android:hint="Masukkan Nama Anda"
                         android:inputType="number"
                         android:textColor="@color/colorBlack"
                         android:textSize="14sp" />
 
                     <TextView
+                        android:layout_marginTop="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Alamat Rumah"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="10sp" />
-
-                    <EditText
-                        android:id="@+id/etAlamatRumah"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="8dp"
-                        android:paddingBottom="8dp"
-                        android:hint="Sesuai dengan alamat KTP"
-                        android:inputType="text"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="14sp" />
+                        android:textSize="12sp"
+                        android:text="Silahkan masukan alamat pengiriman Anda di bawah ini"
+                        android:textColor="@color/colorBlack" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Nomor HP/WA"
+                        android:layout_marginTop="10dp"
+                        android:text="Provinsi"
                         android:textColor="@color/colorBlack"
                         android:textSize="10sp" />
 
-                    <EditText
-                        android:id="@+id/etNoHP"
+                    <Spinner
+                        android:id="@+id/customSpinnerProvinsi"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingTop="8dp"
-                        android:paddingBottom="8dp"
-                        android:hint="Cth : 08577475887"
-                        android:inputType="number"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="14sp" />
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/round_corner"
+                        android:elevation="07dp"
+                        android:fitsSystemWindows="true"
+                        android:padding="10dp"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Alamat Antar"
+                        android:text="Kabupaten/Kota"
                         android:textColor="@color/colorBlack"
                         android:textSize="10sp" />
 
-                    <EditText
-                        android:id="@+id/etAlamatAntar"
+                    <Spinner
+                        android:id="@+id/customSpinnerKabupaten"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingTop="8dp"
-                        android:paddingBottom="8dp"
-                        android:hint="Pilih Alamat"
-                        android:clickable="true"
-                        android:focusable="false"
-                        android:inputType="text"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="14sp" />
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/round_corner"
+                        android:elevation="07dp"
+                        android:fitsSystemWindows="true"
+                        android:padding="10dp"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Titik Lokasi"
+                        android:text="Kecamatan"
                         android:textColor="@color/colorBlack"
                         android:textSize="10sp" />
 
-                    <EditText
-                        android:id="@+id/etLokasi"
+                    <Spinner
+                        android:id="@+id/customSpinnerKecamatan"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingTop="8dp"
-                        android:paddingBottom="8dp"
-                        android:hint="Lokasi"
-                        android:inputType="text"
-                        android:clickable="true"
-                        android:focusable="false"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="14sp" />
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/round_corner"
+                        android:elevation="07dp"
+                        android:fitsSystemWindows="true"
+                        android:padding="10dp"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -232,37 +221,105 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Upload Bukti Tilang"
+                        android:text="Kode Pos"
                         android:textColor="@color/colorBlack"
                         android:textSize="10sp" />
 
-                    <ImageView
-                        android:id="@+id/ivBukti"
-                        android:layout_width="200dp"
-                        android:layout_height="100dp"
-                        android:layout_gravity="center"
-                        android:clickable="true"
-                        android:src="@drawable/ic_camera"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:gravity="center"
-                    android:padding="16dp"
-                    android:orientation="horizontal">
-
-                    <CheckBox
-                        android:id="@+id/cbTilang"
+                    <EditText
+                        android:id="@+id/etKodePos"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Saya telah menyediakan slip bukti tilang"/>
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:hint="Cth : 53192"
+                        android:inputType="text"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp" />
 
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nomor HP/WA"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="10sp" />
+
+                    <EditText
+                        android:id="@+id/etNoHP"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:hint="Cth : 08577475887"
+                        android:inputType="number"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp" />
+
+                    <!--                    <TextView-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:text="Alamat Antar"-->
+                    <!--                        android:textColor="@color/colorBlack"-->
+                    <!--                        android:textSize="10sp" />-->
+
+                    <!--                    <EditText-->
+                    <!--                        android:id="@+id/etAlamatAntar"-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:paddingTop="8dp"-->
+                    <!--                        android:paddingBottom="8dp"-->
+                    <!--                        android:hint="Pilih Alamat"-->
+                    <!--                        android:clickable="true"-->
+                    <!--                        android:focusable="false"-->
+                    <!--                        android:inputType="text"-->
+                    <!--                        android:textColor="@color/colorBlack"-->
+                    <!--                        android:textSize="14sp" />-->
+
+                    <!--                    <TextView-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:text="Titik Lokasi"-->
+                    <!--                        android:textColor="@color/colorBlack"-->
+                    <!--                        android:textSize="10sp" />-->
+
+                    <!--                    <EditText-->
+                    <!--                        android:id="@+id/etLokasi"-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:paddingTop="8dp"-->
+                    <!--                        android:paddingBottom="8dp"-->
+                    <!--                        android:hint="Lokasi"-->
+                    <!--                        android:inputType="text"-->
+                    <!--                        android:clickable="true"-->
+                    <!--                        android:focusable="false"-->
+                    <!--                        android:textColor="@color/colorBlack"-->
+                    <!--                        android:textSize="14sp" />-->
+
+                    <!--                    <TextView-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:text="Detail Alamat"-->
+                    <!--                        android:textColor="@color/colorBlack"-->
+                    <!--                        android:textSize="10sp" />-->
+
+                    <!--                    <EditText-->
+                    <!--                        android:id="@+id/etDetailAlamat"-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:paddingTop="8dp"-->
+                    <!--                        android:paddingBottom="8dp"-->
+                    <!--                        android:hint="mis : nama gang, jalan, nomor rumah"-->
+                    <!--                        android:textColor="@color/colorBlack"-->
+                    <!--                        android:textSize="14sp" />-->
+
+                    <!--                    <TextView-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:text="Upload Bukti Tilang"-->
+                    <!--                        android:textColor="@color/colorBlack"-->
+                    <!--                        android:textSize="10sp" />-->
 
                 </LinearLayout>
-
 
             </LinearLayout>
 

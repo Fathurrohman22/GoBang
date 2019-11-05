@@ -31,4 +31,5 @@ dependencies {
     implementation 'com.scwang.wave:MultiWaveHeader:1.0.0-alpha-1'
     implementation 'de.hdodenhof:circleimageview:3.0.0'
     implementation 'com.github.f0ris.sweetalert:library:1.5.1'
+    implementation 'com.github.iwgang:countdownview:2.1.6'
 }

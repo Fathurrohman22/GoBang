@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Pengantaran">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/btnClose"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="8dp"
+            android:src="@drawable/ic_close_black_24dp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:src="@drawable/ic_logo2" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/ivLogoBerhasil"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        android:tint="@color/colorPrimary"
+                        android:src="@drawable/ic_delivery" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Alamat Pengiriman"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tvCek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Silahkan masukan alamat pengiriman Anda di bawah ini"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlack" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorWhite"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/colorPrimary" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/nama"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="10sp" />
+
+                    <EditText
+                        android:id="@+id/etNama"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:hint="Masukkan Nama"
+                        android:inputType="text"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp" />
+
+                    <!--                    <TextView-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:text="@string/nik"-->
+                    <!--                        android:textColor="@color/colorBlack"-->
+                    <!--                        android:textSize="10sp" />-->
+
+                    <!--                    <EditText-->
+                    <!--                        android:id="@+id/etNik"-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:paddingTop="8dp"-->
+                    <!--                        android:paddingBottom="8dp"-->
+                    <!--                        android:hint="NIK harus sesuai dengan KTP"-->
+                    <!--                        android:inputType="number"-->
+                    <!--                        android:textColor="@color/colorBlack"-->
+                    <!--                        android:textSize="14sp" />-->
+
+                    <!--                    <TextView-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:text="Alamat Rumah"-->
+                    <!--                        android:textColor="@color/colorBlack"-->
+                    <!--                        android:textSize="10sp" />-->
+
+                    <!--                    <EditText-->
+                    <!--                        android:id="@+id/etAlamatRumah"-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:paddingTop="8dp"-->
+                    <!--                        android:paddingBottom="8dp"-->
+                    <!--                        android:hint="Sesuai dengan alamat KTP"-->
+                    <!--                        android:inputType="text"-->
+                    <!--                        android:textColor="@color/colorBlack"-->
+                    <!--                        android:textSize="14sp" />-->
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nomor HP/WA"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="10sp" />
+
+                    <EditText
+                        android:id="@+id/etNoHP"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:hint="Cth : 08577475887"
+                        android:inputType="number"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Provinsi"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="10sp" />
+
+                    <Spinner
+                        android:id="@+id/customSpinnerProvinsi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/round_corner"
+                        android:elevation="07dp"
+                        android:fitsSystemWindows="true"
+                        android:padding="10dp"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Kabupaten/Kota"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="10sp" />
+
+                    <Spinner
+                        android:id="@+id/customSpinnerKabupaten"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/round_corner"
+                        android:elevation="07dp"
+                        android:fitsSystemWindows="true"
+                        android:padding="10dp"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Kecamatan"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="10sp" />
+
+                    <Spinner
+                        android:id="@+id/customSpinnerKecamatan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/round_corner"
+                        android:elevation="07dp"
+                        android:fitsSystemWindows="true"
+                        android:padding="10dp"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Kode Pos"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="10sp" />
+
+                    <EditText
+                        android:id="@+id/etKodePos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:hint="Cth : 53192"
+                        android:inputType="text"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:textColor="@color/colorWhite"
+                            android:id="@+id/btnLanjut"
+                            android:text="Lanjut"
+                            android:background="@drawable/button_effect" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

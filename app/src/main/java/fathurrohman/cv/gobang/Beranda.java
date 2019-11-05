@@ -67,7 +67,7 @@ public class Beranda extends Fragment {
         String Kode  = kode.getText().toString().trim();
         if(TextUtils.isEmpty(Kode)){
                 new Bantuan(getActivity()).swal_warning("Masukkan Kode Tilang");
-        } else if ("12345".equalsIgnoreCase(Kode)) {
+        } else if ("D2210".equalsIgnoreCase(Kode)) {
             Intent i = new Intent(getActivity(), DetailData.class);
             startActivity(i);
         }else {

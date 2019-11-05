@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".Pembayaran">
 
@@ -100,13 +101,73 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Segera lakukan pembayaran dalam waktu"
+                            android:layout_centerInParent="true"
+                            android:textStyle="bold"
+                            android:textAllCaps="true" />
+
+                        <cn.iwgang.countdownview.CountdownView
+                            android:id="@+id/countdown"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            app:isHideTimeBackground="true"
+                            app:isShowDay="true"
+                            app:isShowHour="true"
+                            app:isShowMinute="true"
+                            app:isShowSecond="true"
+                            app:isShowMillisecond="true"
+                            app:timeTextColor="#000000"
+                            app:timeTextSize="25sp"
+                            app:isTimeTextBold="true"
+                            app:suffixGravity="bottom"
+                            app:suffixTextColor="#000000"
+                            app:suffixTextSize="12sp"
+                            app:timeBgDivisionLineSize="1dp"
+                            app:timeBgRadius="3dp"
+                            app:timeBgSize="100dp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Transfer ke nomor Virtual Account :"
+                        android:textColor="@color/colorBlack"
+                        android:layout_marginTop="10dp" />
+
+                    <TextView
+                        android:id="@+id/VirtualAccount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="880800706386890"
+                        android:textColor="@color/colorBlack"
+                        android:layout_marginTop="10dp"
+                        android:textSize="24dp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@color/colorPrimary" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Total Pembayaran"
                         android:textColor="@color/colorBlack"
+                        android:layout_marginTop="10dp"
                         android:textSize="12sp" />
-
 
                     <TextView
                         android:id="@+id/tvidTotal"
@@ -173,45 +234,14 @@
                             android:layout_centerInParent="true"
                             android:text="Rp 20.000"
                             android:textColor="@color/colorBlack" />
-                    </RelativeLayout>
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="4dp"
-                        android:paddingBottom="4dp">
 
                     </RelativeLayout>
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="Pilih Metode Pembayaran"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="12sp" />
-
-                    <RadioGroup
-                        android:id="@+id/rgBayar"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <RadioButton
-                            android:id="@+id/rbBayarDitempat"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textSize="10sp"
-                            android:text="Bayar Ditempat" />
-
-                        <RadioButton
-                            android:id="@+id/rbTransfer"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textSize="10sp"
-                            android:text="Transfer" />
-
-                    </RadioGroup>
-
+                        android:layout_height="2dp"
+                        android:background="@color/colorPrimary" />
 
                 </LinearLayout>
 
@@ -232,7 +262,7 @@
                     android:layout_marginTop="16dp"
                     android:textColor="@color/colorWhite"
                     android:id="@+id/btnLanjut"
-                    android:text="Selesai"
+                    android:text="Lanjut"
                     android:background="@drawable/button_effect" />
 
             </LinearLayout>

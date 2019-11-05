@@ -32,8 +32,8 @@ public class Cari extends Fragment {
         cari = v.findViewById(R.id.cari_card);
         lacak = v.findViewById(R.id.tracking_card);
         pgm = v.findViewById(R.id.pgm_card);
-        carapakai = v.findViewById(R.id.carapakai_card);
-        carabayar = v.findViewById(R.id.carabayar_card);
+//        carapakai = v.findViewById(R.id.carapakai_card);
+//        carabayar = v.findViewById(R.id.carabayar_card);
         tentang = v.findViewById(R.id.tentang_card);
 
         cari.setOnClickListener(new View.OnClickListener() {
@@ -60,27 +60,27 @@ public class Cari extends Fragment {
             }
         });
 
-        carapakai.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getActivity(), CaraPakai.class);
-                startActivity(i);
-            }
-        });
-
-        carabayar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getActivity(), CaraBayar.class);
-                startActivity(i);
-            }
-        });
+//        carapakai.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i = new Intent(getActivity(), CaraPakai.class);
+//                startActivity(i);
+//            }
+//        });
+//
+//        carabayar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i = new Intent(getActivity(), CaraBayar.class);
+//                startActivity(i);
+//            }
+//        });
 
         tentang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getActivity(), About.class);
-                startActivity(i);
+                getContext().startActivity(i);
             }
         });
         return v;
