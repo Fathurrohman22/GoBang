@@ -56,10 +56,16 @@ public class Pemesanan extends AppCompatActivity {
         daftarKabupaten();
         spinnerKec = findViewById(R.id.customSpinnerKecamatan);
         daftarKecamatan();
-        ArrayAdapter<String> customSpinAdap = new ArrayAdapter<>(Pemesanan.this, android.R.layout.simple_spinner_item, list);
-        customSpinAdap.setDropDownViewResource(R.layout.custom_dropdown);
+        ArrayAdapter<String> customSpinAdapProv = new ArrayAdapter<>(Pemesanan.this, android.R.layout.simple_spinner_item, list);
+        customSpinAdapProv.setDropDownViewResource(R.layout.custom_dropdown);
 
-        spinnerProv.setAdapter(customSpinAdap);
+        ArrayAdapter<String> customSpinAdapKab = new ArrayAdapter<>(Pemesanan.this, android.R.layout.simple_spinner_item, list);
+        customSpinAdapKab.setDropDownViewResource(R.layout.custom_dropdown);
+
+        ArrayAdapter<String> customSpinAdapKec = new ArrayAdapter<>(Pemesanan.this, android.R.layout.simple_spinner_item, list);
+        customSpinAdapKec.setDropDownViewResource(R.layout.custom_dropdown);
+
+        spinnerProv.setAdapter(customSpinAdapProv);
         spinnerProv.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -73,7 +79,7 @@ public class Pemesanan extends AppCompatActivity {
             }
         });
 
-        spinnerKab.setAdapter(customSpinAdap);
+        spinnerKab.setAdapter(customSpinAdapKab);
         spinnerKab.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -87,7 +93,7 @@ public class Pemesanan extends AppCompatActivity {
             }
         });
 
-        spinnerKec.setAdapter(customSpinAdap);
+        spinnerKec.setAdapter(customSpinAdapKec);
         spinnerKec.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
