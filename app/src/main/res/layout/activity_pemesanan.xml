@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".Pemesanan">
 
@@ -120,7 +121,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/nama"
+                        android:text="Nama Penerima"
                         android:textColor="@color/colorBlack"
                         android:textSize="10sp" />
 
@@ -131,7 +132,7 @@
                         android:paddingTop="8dp"
                         android:paddingBottom="8dp"
                         android:hint="Masukkan Nama Anda"
-                        android:inputType="number"
+                        android:inputType="textPersonName"
                         android:textColor="@color/colorBlack"
                         android:textSize="14sp" />
 
@@ -140,7 +141,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="12sp"
-                        android:text="Silahkan masukan alamat pengiriman Anda di bawah ini"
+                        android:text="Silahkan masukan data pengiriman barang bukti"
                         android:textColor="@color/colorBlack" />
 
                     <TextView
@@ -151,17 +152,12 @@
                         android:textColor="@color/colorBlack"
                         android:textSize="10sp" />
 
-                    <Spinner
-                        android:id="@+id/customSpinnerProvinsi"
+                    <com.isapanah.awesomespinner.AwesomeSpinner
+                        android:id="@+id/my_spinnerProvinsi"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/round_corner"
-                        android:elevation="07dp"
-                        android:fitsSystemWindows="true"
-                        android:padding="10dp"
-                        android:textAlignment="center" />
+                        app:spinnerDirection="ltr"
+                        app:spinnerHint="Pilih Provinsi" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -170,17 +166,12 @@
                         android:textColor="@color/colorBlack"
                         android:textSize="10sp" />
 
-                    <Spinner
-                        android:id="@+id/customSpinnerKabupaten"
+                    <com.isapanah.awesomespinner.AwesomeSpinner
+                        android:id="@+id/my_spinnerKota"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/round_corner"
-                        android:elevation="07dp"
-                        android:fitsSystemWindows="true"
-                        android:padding="10dp"
-                        android:textAlignment="center" />
+                        app:spinnerDirection="ltr"
+                        app:spinnerHint="Pilih Kabupaten/Kota" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -189,17 +180,12 @@
                         android:textColor="@color/colorBlack"
                         android:textSize="10sp" />
 
-                    <Spinner
-                        android:id="@+id/customSpinnerKecamatan"
+                    <com.isapanah.awesomespinner.AwesomeSpinner
+                        android:id="@+id/my_spinnerKecamatan"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/round_corner"
-                        android:elevation="07dp"
-                        android:fitsSystemWindows="true"
-                        android:padding="10dp"
-                        android:textAlignment="center" />
+                        app:spinnerDirection="ltr"
+                        app:spinnerHint="Pilih Kecamatan" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -232,7 +218,7 @@
                         android:paddingTop="8dp"
                         android:paddingBottom="8dp"
                         android:hint="Cth : 53192"
-                        android:inputType="text"
+                        android:inputType="number"
                         android:textColor="@color/colorBlack"
                         android:textSize="14sp" />
 

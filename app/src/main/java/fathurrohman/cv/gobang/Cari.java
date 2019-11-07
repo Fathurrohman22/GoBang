@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 
 /**
@@ -39,8 +41,12 @@ public class Cari extends Fragment {
         cari.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(), Beranda.class);
-                startActivity(i);
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                Beranda beranda = new Beranda();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container_cari, beranda).addToBackStack(null).commit();
+//                fragmentTransaction.addToBackStack(null);
+//                fragmentTransaction.commit();
             }
         });
 
@@ -76,13 +82,13 @@ public class Cari extends Fragment {
 //            }
 //        });
 
-        tentang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getActivity(), About.class);
-                getContext().startActivity(i);
-            }
-        });
+//        tentang.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i = new Intent(getActivity(), About.class);
+//                getContext().startActivity(i);
+//            }
+//        });
         return v;
     }
 

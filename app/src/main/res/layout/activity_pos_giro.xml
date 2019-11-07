@@ -6,7 +6,8 @@
     android:orientation="vertical"
     tools:context=".PosGiro">
 
-    <RelativeLayout
+    <FrameLayout
+        android:id="@+id/container_pos"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorWhite"
@@ -29,7 +30,7 @@
             android:padding="8dp"
             android:src="@drawable/pgm" />
 
-    </RelativeLayout>
+    </FrameLayout>
 
     <TextView
         android:layout_width="wrap_content"
@@ -69,6 +70,7 @@
             android:text="@string/descpgm" />
 
         <Button
+            android:id="@+id/download_pgm"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

@@ -127,7 +127,7 @@
                             app:isShowSecond="true"
                             app:isShowMillisecond="true"
                             app:timeTextColor="#000000"
-                            app:timeTextSize="25sp"
+                            app:timeTextSize="16sp"
                             app:isTimeTextBold="true"
                             app:suffixGravity="bottom"
                             app:suffixTextColor="#000000"
@@ -250,6 +250,47 @@
                         android:layout_width="match_parent"
                         android:layout_height="2dp"
                         android:background="@color/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cara Pembayaran"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/recyclerViewMetode" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerInParent="true"
+                            android:text="*Apabila belum mempunyai Aplikasi PGM silahkan klik"
+                            android:textColor="@color/colorRed" />
+
+                        <TextView
+                            android:id="@+id/aplikasiPGM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:text="disini"
+                            android:textColor="@color/colorRed" />
+
+                    </RelativeLayout>
 
                 </LinearLayout>
 
