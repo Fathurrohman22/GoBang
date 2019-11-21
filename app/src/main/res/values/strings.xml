@@ -33,4 +33,7 @@
     <string name="nik">NIK</string>
     <string name="detail">Detail Pembayaran</string>
     <string name="descpgm">POSGIRO Mobile dengan berbagai Layanan Keuangan dan Layanan Pos lainnya di Pos</string>
+    <string name="masukan_kode_tilang_anda">Masukan Kode Tilang Anda</string>
+    <string name="cari">Cari</string>
+    <string name="tidak_ada_item_yang_di_pilih">Tidak ada item yang di pilih</string>
 </resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="fathurrohman.cv.gobang">
+    package="id.gobang.app">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -9,33 +9,39 @@
         android:allowBackup="true"
         android:hardwareAccelerated="false"
         android:icon="@drawable/ic_logo2"
+        android:roundIcon="@drawable/ic_logo2"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme"
-        tools:replace="android:icon">
-        <activity android:name=".Tentang"></activity>
-        <activity android:name=".Pengantaran" />
-        <activity android:name=".ResiKirim" />
-        <activity android:name=".SudahAmbil" />
-        <activity android:name=".CaraPakai" />
-        <activity android:name=".CaraBayar" />
-        <activity android:name=".PosGiro" />
-        <activity android:name=".Lacak" />
-        <activity android:name=".Barcode" />
-        <activity android:name=".Pembayaran" />
-        <activity android:name=".ValidasiData" />
-        <activity android:name=".Pemesanan" />
-        <activity android:name=".SplashScreen">
+        tools:replace="android:icon"
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:targetApi="m">
+        <activity android:name="id.gobang.app.Activity.Tentang" />
+        <activity android:name="id.gobang.app.Activity.Pengantaran" />
+        <activity android:name="id.gobang.app.Activity.ResiKirim" />
+        <activity android:name="id.gobang.app.Activity.SudahAmbil" />
+        <activity android:name="id.gobang.app.Activity.CaraPakai" />
+        <activity android:name="id.gobang.app.Activity.CaraBayar" />
+        <activity android:name="id.gobang.app.Activity.PosGiro" />
+        <activity android:name="id.gobang.app.Activity.Lacak" />
+        <activity android:name="id.gobang.app.Activity.Barcode" />
+        <activity android:name="id.gobang.app.Activity.Pembayaran" />
+        <activity android:name="id.gobang.app.Activity.ValidasiData" />
+        <activity android:name="id.gobang.app.Activity.Pemesanan" />
+        <activity android:name="id.gobang.app.Activity.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DetailData" />
-        <activity android:name=".WelcomeActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name="id.gobang.app.Activity.DetailData" />
+        <activity android:name="id.gobang.app.Activity.WelcomeActivity" />
+        <activity android:name="id.gobang.app.Activity.MainActivity" />
+
+
     </application>
 
 </manifest>

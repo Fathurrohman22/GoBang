@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".Pemesanan">
+    tools:context=".Activity.Pemesanan">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -117,6 +117,71 @@
                         android:text="@string/d221098"
                         android:textColor="@color/colorBlack"
                         android:textSize="14sp" />
+
+                    <gr.escsoft.michaelprimez.searchablespinner.SearchableSpinner
+                        android:id="@+id/spinner_provinsi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        app:StartSearchTintColor="@color/colorBlack"
+                        app:DoneSearchTintColor="@color/colorBlack"
+                        app:RevealViewBackgroundColor="@color/colorWhite"
+                        app:SearchViewBackgroundColor="@color/colorWhite"
+                        app:ShowBorders="true"
+                        app:BordersSize="1dp"
+                        app:BoarderColor="@color/colorPrimary"
+                        app:NoItemsFoundText="Data Tidak Ditemukan"
+                        app:SearchHintText="Cari Provinsi ..."
+                        app:KeepLastSearch="false"
+                        app:RevealEmptyText="Pilih Provinsi" />
+
+                    <gr.escsoft.michaelprimez.searchablespinner.SearchableSpinner
+                        android:id="@+id/spinner_kabupaten"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        app:StartSearchTintColor="@color/colorBlack"
+                        app:DoneSearchTintColor="@color/colorBlack"
+                        app:RevealViewBackgroundColor="@color/colorWhite"
+                        app:SearchViewBackgroundColor="@color/colorWhite"
+                        app:ShowBorders="true"
+                        app:BordersSize="1dp"
+                        app:BoarderColor="@color/colorPrimary"
+                        app:NoItemsFoundText="Data Tidak Ditemukan"
+                        app:SearchHintText="Cari Kabupaten ..."
+                        app:RevealEmptyText="Pilih Kabupaten" />
+
+                    <gr.escsoft.michaelprimez.searchablespinner.SearchableSpinner
+                        android:id="@+id/spinner_kecamatan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        app:StartSearchTintColor="@color/colorBlack"
+                        app:DoneSearchTintColor="@color/colorBlack"
+                        app:RevealViewBackgroundColor="@color/colorWhite"
+                        app:SearchViewBackgroundColor="@color/colorWhite"
+                        app:ShowBorders="true"
+                        app:BordersSize="1dp"
+                        app:BoarderColor="@color/colorPrimary"
+                        app:NoItemsFoundText="Data Tidak Ditemukan"
+                        app:SearchHintText="Cari Kecamatan ..."
+                        app:RevealEmptyText="Pilih Kecamatan" />
+
+                    <gr.escsoft.michaelprimez.searchablespinner.SearchableSpinner
+                        android:id="@+id/spinner_desa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        app:StartSearchTintColor="@color/colorBlack"
+                        app:DoneSearchTintColor="@color/colorBlack"
+                        app:RevealViewBackgroundColor="@color/colorWhite"
+                        app:SearchViewBackgroundColor="@color/colorWhite"
+                        app:ShowBorders="true"
+                        app:BordersSize="1dp"
+                        app:BoarderColor="@color/colorPrimary"
+                        app:NoItemsFoundText="Data Tidak Ditemukan"
+                        app:SearchHintText="Cari Desa ..."
+                        app:RevealEmptyText="Pilih Desa" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -346,10 +411,9 @@
                     android:textColor="@color/colorWhite"
                     android:id="@+id/btnLanjut"
                     android:text="Lanjut"
-                    android:background="@drawable/button_effect"/>
+                    android:background="@drawable/button_effect" />
 
             </LinearLayout>
-
 
 
         </LinearLayout>

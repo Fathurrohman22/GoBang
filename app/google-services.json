@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "797869594271",
+    "firebase_url": "https://gobangapp-abcee.firebaseio.com",
+    "project_id": "gobangapp-abcee",
+    "storage_bucket": "gobangapp-abcee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:797869594271:android:9fc64199fe7a0e9a18b4aa",
+        "android_client_info": {
+          "package_name": "id.gobang.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "797869594271-7jhvnlkihf0agpm6d26rt1kbltbkqhts.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.gobang.app",
+            "certificate_hash": "e7621f2873f653c871807f35524f4ff2e19710d6"
+          }
+        },
+        {
+          "client_id": "797869594271-us779ac5dang0rf7u7c81ud93m59a9co.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIf6mHj0o9q43cR38xHxyhZN8d9lcjIgg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "797869594271-us779ac5dang0rf7u7c81ud93m59a9co.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
