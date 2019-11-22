@@ -2,9 +2,9 @@ package id.gobang.app.Activity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -19,7 +19,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.isapanah.awesomespinner.AwesomeSpinner;
 import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
 
 import org.json.JSONArray;
@@ -48,8 +47,6 @@ public class Pemesanan extends AppCompatActivity {
     ImageView silang;
     TextView id_tilang;
     EditText nama, detail_alamat, kodepos, nohp;
-    AwesomeSpinner spinnerProv, spinnerKab, spinnerKec;
-    List<String> list;
     private Context context = Pemesanan.this;
     private SimpleListAdapter ProvinsiAdapter;
     private SimpleListAdapter KabupatenAdapter;
@@ -64,12 +61,14 @@ public class Pemesanan extends AppCompatActivity {
     private List<ProvinsiModel> listProvinsi = new ArrayList<>();
     private List<KabupatenModel> listKabupaten = new ArrayList<>();
     private List<KecamatanModel> listKecamatan = new ArrayList<>();
-    private List<DesaModel> lisDesa = new ArrayList<>();
+    private List<DesaModel> listDesa = new ArrayList<>();
 
     private final ArrayList<String> provinsi = new ArrayList<>();
     private final ArrayList<String> kabupaten = new ArrayList<>();
     private final ArrayList<String> kecamatan = new ArrayList<>();
     private final ArrayList<String> desa = new ArrayList<>();
+
+    private int nominalPos = 20000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,10 +85,6 @@ public class Pemesanan extends AppCompatActivity {
         nohp = findViewById(R.id.etNoHP);
 
         id_tilang.setText(getIntent().getStringExtra("no_reg_tilang"));
-
-        spinnerProv = findViewById(R.id.my_spinnerProvinsi);
-        spinnerKab = findViewById(R.id.my_spinnerKota);
-        spinnerKec = findViewById(R.id.my_spinnerKecamatan);
 
         spinner_provinsi = findViewById(R.id.spinner_provinsi);
         spinner_kabupaten = findViewById(R.id.spinner_kabupaten);
@@ -153,8 +148,6 @@ public class Pemesanan extends AppCompatActivity {
             }
         });
 
-
-
         lanjut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -169,54 +162,23 @@ public class Pemesanan extends AppCompatActivity {
             }
         });
 
-        getProvinsi();
-
-
-        List<String> kategoriKab = new ArrayList<String>();
-        kategoriKab.add("Banyumas");
-        kategoriKab.add("Bogor");
-        kategoriKab.add("Mojokerto");
-
-        ArrayAdapter<String> KabKategori = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, kategoriKab);
-        spinnerKab.setAdapter(KabKategori);
-        spinnerKab.setOnSpinnerItemClickListener(new AwesomeSpinner.onSpinnerItemClickListener<String>() {
-            @Override
-            public void onItemSelected(int position, String itemAtPosition) {
-
-            }
-        });
-        List<String> kategoriKec = new ArrayList<String>();
-        kategoriKec.add("Purwokerto Utara");
-        kategoriKec.add("Tasikmalaya");
-        kategoriKec.add("Mojokerto");
-
-        ArrayAdapter<String> KecKategori = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, kategoriKec);
-        spinnerKec.setAdapter(KecKategori);
-        spinnerKec.setOnSpinnerItemClickListener(new AwesomeSpinner.onSpinnerItemClickListener<String>() {
-            @Override
-            public void onItemSelected(int position, String itemAtPosition) {
-
-            }
-        });
-
-
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if(!spinner_provinsi.isInsideSearchEditText(event)){
+        if (!spinner_provinsi.isInsideSearchEditText(event)) {
             spinner_provinsi.hideEdit();
         }
 
-        if(!spinner_kabupaten.isInsideSearchEditText(event)){
+        if (!spinner_kabupaten.isInsideSearchEditText(event)) {
             spinner_kabupaten.hideEdit();
         }
 
-        if(!spinner_kecamatan.isInsideSearchEditText(event)){
+        if (!spinner_kecamatan.isInsideSearchEditText(event)) {
             spinner_kecamatan.hideEdit();
         }
 
-        if(!spinner_desa.isInsideSearchEditText(event)){
+        if (!spinner_desa.isInsideSearchEditText(event)) {
             spinner_desa.hideEdit();
         }
         return super.onTouchEvent(event);
@@ -233,7 +195,7 @@ public class Pemesanan extends AppCompatActivity {
                         try {
                             JSONObject object = new JSONObject(response);
                             boolean isError = object.getBoolean("error");
-                            if(!isError){
+                            if (!isError) {
                                 JSONArray jsonArray = object.getJSONArray("semuaprovinsi");
                                 for (int i = 0; i < jsonArray.length(); i++) {
                                     JSONObject jsonObject = jsonArray.getJSONObject(i);
@@ -250,9 +212,15 @@ public class Pemesanan extends AppCompatActivity {
                                     @Override
                                     public void onItemSelected(View view, int position, long id) {
                                         int index = -1;
-                                        if(position > 0){
-                                            for(int i = 0; i < listProvinsi.size() ; i++){
-                                                if(ProvinsiAdapter.getItem(position).equals(listProvinsi.get(i).getNama())){
+                                        if (position > 0) {
+                                            for (int i = 0; i < listProvinsi.size(); i++) {
+                                                if (ProvinsiAdapter.getItem(position).equals(listProvinsi.get(i).getNama())) {
+                                                    if(listProvinsi.get(i).getId().equalsIgnoreCase("33") || //Jawa Tengah
+                                                            listProvinsi.get(i).getId().equalsIgnoreCase("34")){ // DIY
+                                                        nominalPos = 12000;
+                                                    } else {
+                                                        nominalPos = 20000;
+                                                    }
                                                     index = i;
                                                     break;
                                                 }
@@ -260,20 +228,28 @@ public class Pemesanan extends AppCompatActivity {
                                         }
 
                                         kabupaten.clear();
-                                        kabupaten.add("Pilih Kabupaten");
                                         KabupatenAdapter = new SimpleListAdapter(context, kabupaten, "Pilih Kabupaten");
                                         spinner_kabupaten.setAdapter(KabupatenAdapter);
+                                        spinner_kabupaten.setSelectedItem(0);
 
-                                        if(index > -1){
+                                        kecamatan.clear();
+                                        KecamatanAdapter = new SimpleListAdapter(context, kecamatan, "Pilih Kecamatan");
+                                        spinner_kecamatan.setAdapter(KecamatanAdapter);
+                                        spinner_kecamatan.setSelectedItem(0);
+
+                                        desa.clear();
+                                        DesaAdapter = new SimpleListAdapter(context, desa, "Pilih Desa");
+                                        spinner_desa.setAdapter(DesaAdapter);
+                                        spinner_desa.setSelectedItem(0);
+
+                                        if (index > -1) {
                                             getListKabupaten(listProvinsi.get(index).getId());
                                         }
-
-//                                        Toast.makeText(context, "ID :  " + listProvinsi.get(index).getId() + " : " + listProvinsi.get(index).getNama(), Toast.LENGTH_SHORT).show();
                                     }
 
                                     @Override
                                     public void onNothingSelected() {
-                                        Toast.makeText(context, "Nothing Selected", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(context, "Silahkan pilih provinsi terlebih dahulu", Toast.LENGTH_SHORT).show();
                                     }
                                 });
 
@@ -294,7 +270,7 @@ public class Pemesanan extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
-    private void getListKabupaten(String ID_PROVINSI){
+    private void getListKabupaten(String ID_PROVINSI) {
         RequestQueue requestQueue = Volley.newRequestQueue(Objects.requireNonNull(context));
         StringRequest stringRequest = new StringRequest(Request.Method.GET,
                 API.URL_KABUPATEN(ID_PROVINSI),
@@ -306,7 +282,7 @@ public class Pemesanan extends AppCompatActivity {
                         try {
                             JSONObject object = new JSONObject(response);
                             boolean isError = object.getBoolean("error");
-                            if(!isError){
+                            if (!isError) {
                                 JSONArray jsonArray = object.getJSONArray("kabupatens");
                                 for (int i = 0; i < jsonArray.length(); i++) {
                                     JSONObject jsonObject = jsonArray.getJSONObject(i);
@@ -318,25 +294,174 @@ public class Pemesanan extends AppCompatActivity {
                                     listKabupaten.add(kabupatenModel);
                                 }
 
-                                KabupatenAdapter = new SimpleListAdapter(context, kabupaten);
+                                KabupatenAdapter = new SimpleListAdapter(context, kabupaten, "Pilih Kabupaten");
                                 spinner_kabupaten.setAdapter(KabupatenAdapter);
                                 spinner_kabupaten.setOnItemSelectedListener(new OnItemSelectedListener() {
                                     @Override
                                     public void onItemSelected(View view, int position, long id) {
                                         int index = -1;
-                                        for(int i = 0; i < listKabupaten.size() ; i++){
-                                            if(KabupatenAdapter.getItem(position).equals(listKabupaten.get(i).getNama())){
-                                                index = i;
-                                                break;
+                                        if (position > 0) {
+                                            for (int i = 0; i < listKabupaten.size(); i++) {
+                                                if (KabupatenAdapter.getItem(position).equals(listKabupaten.get(i).getNama())) {
+                                                    index = i;
+                                                    break;
+                                                }
                                             }
                                         }
 
-                                        Toast.makeText(context, "ID :  " + listKabupaten.get(index).getId() + " : " + listKabupaten.get(index).getNama(), Toast.LENGTH_SHORT).show();
+                                        kecamatan.clear();
+                                        KecamatanAdapter = new SimpleListAdapter(context, kecamatan, "Pilih Kecamatan");
+                                        spinner_kecamatan.setAdapter(KecamatanAdapter);
+                                        spinner_kecamatan.setSelectedItem(0);
+
+                                        desa.clear();
+                                        DesaAdapter = new SimpleListAdapter(context, desa, "Pilih Desa");
+                                        spinner_desa.setAdapter(DesaAdapter);
+                                        spinner_desa.setSelectedItem(0);
+
+                                        if (index > -1) {
+                                            getListKecamatan(listKabupaten.get(index).getId());
+                                        }
                                     }
 
                                     @Override
                                     public void onNothingSelected() {
-                                        Toast.makeText(context, "Nothing Selected", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(context, "Silahkan pilih kabupaten terlebih dahulu", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+
+                            } else {
+                                new Bantuan(context).toastLong(object.getString("message"));
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            new Bantuan(context).toastLong(e.getMessage());
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                new Bantuan(context).swal_error("err :" + error.toString());
+            }
+        });
+        requestQueue.add(stringRequest);
+    }
+
+    private void getListKecamatan(String ID_KABUPATEN) {
+        RequestQueue requestQueue = Volley.newRequestQueue(Objects.requireNonNull(context));
+        StringRequest stringRequest = new StringRequest(Request.Method.GET,
+                API.URL_KECAMATAN(ID_KABUPATEN),
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        listKecamatan.clear();
+                        kecamatan.clear();
+                        try {
+                            JSONObject object = new JSONObject(response);
+                            boolean isError = object.getBoolean("error");
+                            if (!isError) {
+                                JSONArray jsonArray = object.getJSONArray("kecamatans");
+                                for (int i = 0; i < jsonArray.length(); i++) {
+                                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                    KecamatanModel kecamatanModel = new KecamatanModel();
+                                    kecamatanModel.setId(jsonObject.getString("id"));
+                                    kecamatanModel.setId_kabupaten(jsonObject.getString("id_kabupaten"));
+                                    kecamatanModel.setNama(jsonObject.getString("nama"));
+                                    kecamatan.add(jsonObject.getString("nama"));
+                                    listKecamatan.add(kecamatanModel);
+                                }
+
+                                KecamatanAdapter = new SimpleListAdapter(context, kecamatan, "Pilih Kecamatan");
+                                spinner_kecamatan.setAdapter(KecamatanAdapter);
+                                spinner_kecamatan.setOnItemSelectedListener(new OnItemSelectedListener() {
+                                    @Override
+                                    public void onItemSelected(View view, int position, long id) {
+                                        int index = -1;
+                                        if (position > 0) {
+                                            for (int i = 0; i < listKecamatan.size(); i++) {
+                                                if (KecamatanAdapter.getItem(position).equals(listKecamatan.get(i).getNama())) {
+                                                    index = i;
+                                                    break;
+                                                }
+                                            }
+                                        }
+
+                                        desa.clear();
+                                        DesaAdapter = new SimpleListAdapter(context, desa, "Pilih Desa");
+                                        spinner_desa.setAdapter(DesaAdapter);
+                                        spinner_desa.setSelectedItem(0);
+
+                                        if (index > -1) {
+                                            getListDesa(listKecamatan.get(index).getId());
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onNothingSelected() {
+                                        Toast.makeText(context, "Silahkan pilih kecamatan terlebih dahulu", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+
+                            } else {
+                                new Bantuan(context).toastLong(object.getString("message"));
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            new Bantuan(context).toastLong(e.getMessage());
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                new Bantuan(context).swal_error("err :" + error.toString());
+            }
+        });
+        requestQueue.add(stringRequest);
+    }
+
+    private void getListDesa(String ID_DESA) {
+        RequestQueue requestQueue = Volley.newRequestQueue(Objects.requireNonNull(context));
+        StringRequest stringRequest = new StringRequest(Request.Method.GET,
+                API.URL_DESA(ID_DESA),
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        listDesa.clear();
+                        desa.clear();
+                        try {
+                            JSONObject object = new JSONObject(response);
+                            boolean isError = object.getBoolean("error");
+                            if (!isError) {
+                                JSONArray jsonArray = object.getJSONArray("desas");
+                                for (int i = 0; i < jsonArray.length(); i++) {
+                                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                    DesaModel desaModel = new DesaModel();
+                                    desaModel.setId(jsonObject.getString("id"));
+                                    desaModel.setId_kecamatan(jsonObject.getString("id_kecamatan"));
+                                    desaModel.setNama(jsonObject.getString("nama"));
+                                    desa.add(jsonObject.getString("nama"));
+                                    listDesa.add(desaModel);
+                                }
+
+                                DesaAdapter = new SimpleListAdapter(context, desa, "Pilih Desa");
+                                spinner_desa.setAdapter(DesaAdapter);
+                                spinner_desa.setOnItemSelectedListener(new OnItemSelectedListener() {
+                                    @Override
+                                    public void onItemSelected(View view, int position, long id) {
+                                        int index = -1;
+                                        if (position > 0) {
+                                            for (int i = 0; i < listDesa.size(); i++) {
+                                                if (DesaAdapter.getItem(position).equals(listDesa.get(i).getNama())) {
+                                                    index = i;
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onNothingSelected() {
+                                        Toast.makeText(context, "Silahkan pilih desa terlebih dahulu", Toast.LENGTH_SHORT).show();
                                     }
                                 });
 
@@ -358,45 +483,62 @@ public class Pemesanan extends AppCompatActivity {
     }
 
     private void lanjut() {
-        new SweetAlertDialog(Pemesanan.this, SweetAlertDialog.WARNING_TYPE)
-                .setTitleText("Peringatan")
-                .setContentText("Apakah data yang anda masukkan sudah benar ?")
-                .setConfirmText("Benar")
-                .setCancelText("Salah")
-                .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                    @Override
-                    public void onClick(SweetAlertDialog sDialog) {
-                        sDialog.changeAlertType(SweetAlertDialog.PROGRESS_TYPE);
-                        sDialog.getProgressHelper().setBarColor(context.getResources().getColor(R.color.colorPrimary));
-                        sDialog.setTitleText("Loading ...");
-                        sDialog.showCancelButton(false);
-                        sDialog.setContentText("Tunggu beberapa saat");
-                        sDialog.setCancelable(false);
-                        sDialog.show();
-                    }
-                })
-                .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                    @Override
-                    public void onClick(SweetAlertDialog sweetAlertDialog) {
-                        sweetAlertDialog.dismissWithAnimation();
-                    }
-                }).show();
+        if (
+                TextUtils.isEmpty(id_tilang.getText().toString()) ||
+                        TextUtils.isEmpty(nama.getText().toString()) ||
+                        spinner_provinsi.getSelectedItem() == null ||
+                        spinner_kabupaten.getSelectedItem() == null ||
+                        spinner_kecamatan.getSelectedItem() == null ||
+                        spinner_desa.getSelectedItem() == null ||
+                        TextUtils.isEmpty(detail_alamat.getText().toString()) ||
+                        TextUtils.isEmpty(kodepos.getText().toString()) ||
+                        TextUtils.isEmpty(nohp.getText().toString())
+        ) {
+            new Bantuan(context).swal_error("Masih ada data yang kosong, silahkan lengkapi semua data terlebih dahulu");
+        } else {
+            new SweetAlertDialog(Pemesanan.this, SweetAlertDialog.WARNING_TYPE)
+                    .setTitleText("Peringatan")
+                    .setContentText("Apakah data yang anda masukkan sudah benar ?")
+                    .setConfirmText("Lanjut")
+                    .setCancelText("Ulangi")
+                    .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                        @Override
+                        public void onClick(SweetAlertDialog sDialog) {
+//                        sDialog.changeAlertType(SweetAlertDialog.PROGRESS_TYPE);
+//                        sDialog.getProgressHelper().setBarColor(context.getResources().getColor(R.color.colorPrimary));
+//                        sDialog.setTitleText("Loading ...");
+//                        sDialog.showCancelButton(false);
+//                        sDialog.setContentText("Tunggu beberapa saat");
+//                        sDialog.setCancelable(true);
+//                        sDialog.show();
+
+                            new Bantuan(context).alertDialogDebugging(
+                                    "Nomor Tilang : " + id_tilang.getText().toString() + "\n" +
+                                            "Nama Penerima : " + nama.getText().toString() + "\n" +
+                                            "Provinsi : " + spinner_provinsi.getSelectedItem().toString() + "\n" +
+                                            "Kabupaten : " + spinner_kabupaten.getSelectedItem().toString() + "\n" +
+                                            "Kecamatan : " + spinner_kecamatan.getSelectedItem().toString() + "\n" +
+                                            "Desa : " + spinner_desa.getSelectedItem().toString() + "\n" +
+                                            "Detail Alamat : " + detail_alamat.getText().toString() + "\n" +
+                                            "Kode Pos : " + kodepos.getText().toString() + "\n" +
+                                            "Nomer HP : " + nohp.getText().toString() + "\n" +
+                                            "Alamat Antar : " + "Ds. " + spinner_desa.getSelectedItem().toString() + ", Kec." +
+                                            spinner_kecamatan.getSelectedItem().toString() + ", " +
+                                            spinner_kabupaten.getSelectedItem().toString() + ", " +
+                                            spinner_provinsi.getSelectedItem().toString() + "\n" +
+                                            "Nominal Denda : " + getIntent().getStringExtra("denda") + "\n" +
+                                            "Nominal Perkara : " + getIntent().getStringExtra("biaya_perkara") + "\n" +
+                                            "Nominal Pos : " + nominalPos
+                            );
+                        }
+                    })
+                    .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                        @Override
+                        public void onClick(SweetAlertDialog sweetAlertDialog) {
+                            sweetAlertDialog.dismissWithAnimation();
+                        }
+                    }).show();
+        }
     }
 
-    private void getProvinsi() {
-        List<String> kategoriProv = new ArrayList<>();
-        kategoriProv.add("Jawa Tengah");
-        kategoriProv.add("Jawa Barat");
-        kategoriProv.add("Jawa Timur");
-
-        ArrayAdapter<String> ProvKategori = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,
-                kategoriProv);
-        spinnerProv.setAdapter(ProvKategori);
-        spinnerProv.setOnSpinnerItemClickListener(new AwesomeSpinner.onSpinnerItemClickListener<String>() {
-            @Override
-            public void onItemSelected(int position, String itemAtPosition) {
-
-            }
-        });
-    }
 }

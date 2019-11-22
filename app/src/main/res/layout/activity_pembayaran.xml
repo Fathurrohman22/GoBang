@@ -44,7 +44,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp">
+                android:padding="16dp"
+                android:background="@color/colorWhite">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -74,14 +75,6 @@
 
             </RelativeLayout>
 
-            <!--            <TextView-->
-            <!--                android:id="@+id/tvCek"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:text="Silahkan periksa data di bawah ini"-->
-            <!--                android:textAlignment="center"-->
-            <!--                android:textColor="@color/colorBlack" />-->
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -110,72 +103,100 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Segera lakukan pembayaran dalam waktu"
-                            android:layout_centerInParent="true"
+                            android:text="@string/segera_lakukan_pembayaran_dalam_waktu"
                             android:textStyle="bold"
                             android:textAllCaps="true" />
 
                         <cn.iwgang.countdownview.CountdownView
                             android:id="@+id/countdown"
+                            android:layout_marginTop="8dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            app:isHideTimeBackground="true"
-                            app:isShowDay="true"
+                            app:isShowDay="false"
                             app:isShowHour="true"
                             app:isShowMinute="true"
                             app:isShowSecond="true"
-                            app:isShowMillisecond="true"
+                            app:isShowMillisecond="false"
                             app:timeTextColor="#000000"
-                            app:timeTextSize="16sp"
+                            app:timeTextSize="20sp"
+                            app:isSuffixTextBold="false"
                             app:isTimeTextBold="true"
-                            app:suffixGravity="bottom"
+                            app:suffixGravity="center"
                             app:suffixTextColor="#000000"
-                            app:suffixTextSize="12sp"
+                            app:suffixTextSize="20sp"
                             app:timeBgDivisionLineSize="1dp"
                             app:timeBgRadius="3dp"
-                            app:timeBgSize="100dp" />
+                            app:isConvertDaysToHours="true"
+                            app:suffixHour="Jam :"
+                            app:suffixHourLeftMargin="8dp"
+                            app:suffixHourRightMargin="8dp"
+                            app:suffixMinuteLeftMargin="8dp"
+                            app:suffixMinuteRightMargin="8dp"
+                            app:suffixSecondLeftMargin="8dp"
+                            app:suffixSecondRightMargin="8dp"
+                            app:suffixMinute="Menit :"
+                            app:suffixSecond="Detik"
+                            app:isShowTimeBgBorder="true"
+                            app:isHideTimeBackground="true" />
 
                     </LinearLayout>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Transfer ke nomor Virtual Account :"
+                        android:text="@string/transfer_ke_nomor_virtual_account"
                         android:textColor="@color/colorBlack"
-                        android:layout_marginTop="10dp" />
+                        android:layout_marginTop="16dp" />
 
                     <TextView
                         android:id="@+id/VirtualAccount"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="880800706386890"
+                        android:text="@string/_880800706386890"
                         android:textColor="@color/colorBlack"
-                        android:layout_marginTop="10dp"
-                        android:textSize="24dp"
+                        android:textSize="24sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/SalinRek"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="Salin No. Rekening"
+                        android:text="@string/salin_nomor_virtual_account"
+                        android:padding="4dp"
+                        android:clickable="true"
+                        android:background="?attr/selectableItemBackground"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        android:focusable="true" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_marginTop="4dp"
-                        android:background="@color/colorPrimary" />
 
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorWhite"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/colorPrimary" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Total Pembayaran"
-                        android:textColor="@color/colorBlack"
-                        android:layout_marginTop="10dp"
-                        android:textSize="12sp" />
+                        android:text="@string/total_pembayaran"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorBlack" />
 
                     <TextView
                         android:id="@+id/tvidTotal"
@@ -183,8 +204,9 @@
                         android:layout_height="wrap_content"
                         android:paddingTop="8dp"
                         android:paddingBottom="8dp"
-                        android:text="Rp 71.000"
-                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold"
+                        android:text="@string/rp_71_000"
+                        android:textColor="@color/colorPrimary"
                         android:textSize="18sp" />
 
                     <TextView
@@ -193,7 +215,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/detail"
                         android:textColor="@color/colorBlack"
-                        android:textSize="14sp"
+                        android:layout_marginTop="8dp"
                         android:textStyle="bold" />
 
                     <RelativeLayout
@@ -207,7 +229,7 @@
                             android:layout_height="match_parent"
                             android:layout_alignParentStart="true"
                             android:layout_centerInParent="true"
-                            android:text="Denda"
+                            android:text="Denda Tilang"
                             android:textColor="@color/colorBlack" />
 
                         <TextView
@@ -243,59 +265,93 @@
                             android:text="Rp 20.000"
                             android:textColor="@color/colorBlack" />
 
-
                     </RelativeLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:background="@color/colorPrimary" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Cara Pembayaran"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:id="@+id/recyclerViewMetode" />
-                    </LinearLayout>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
+                        android:layout_height="wrap_content"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_alignParentStart="true"
                             android:layout_centerInParent="true"
-                            android:text="*Apabila belum mempunyai Aplikasi PGM silahkan klik"
-                            android:textColor="@color/colorRed" />
+                            android:text="Biaya Administrasi"
+                            android:textColor="@color/colorBlack" />
 
                         <TextView
-                            android:id="@+id/aplikasiPGM"
+                            android:id="@+id/tvBiayaAdministrasi"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_alignParentEnd="true"
-                            android:text="disini"
-                            android:textColor="@color/colorBlue" />
-
+                            android:layout_centerInParent="true"
+                            android:text="@string/rp"
+                            android:textColor="@color/colorBlack" />
                     </RelativeLayout>
 
                 </LinearLayout>
 
-
             </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorWhite"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorPrimary" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cara Pembayaran"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/recyclerViewMetode" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="16dp"
+                        android:text="*Apabila belum mempunyai Aplikasi PGM silahkan klik"
+                        android:textColor="@color/colorRed" />
+
+                    <TextView
+                        android:id="@+id/aplikasiPGM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:text="disini"
+                        android:textColor="@color/colorBlue" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+        </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -306,20 +362,16 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_marginTop="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
                     android:textColor="@color/colorWhite"
                     android:id="@+id/btnLanjut"
                     android:text="Selesai"
                     android:background="@drawable/button_effect" />
 
             </LinearLayout>
-
-
         </LinearLayout>
-
     </ScrollView>
-
-
 </LinearLayout>

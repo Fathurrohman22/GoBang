@@ -50,6 +50,9 @@ public class DetailData extends AppCompatActivity {
             public void onClick(View view) {
                 Intent lanjut = new Intent(DetailData.this, Pemesanan.class);
                 lanjut.putExtra("no_reg_tilang", getIntent().getStringExtra("no_reg_tilang"));
+                lanjut.putExtra("denda", getIntent().getStringExtra("denda"));
+                lanjut.putExtra("biaya_perkara", getIntent().getStringExtra("biaya_perkara"));
+
                 startActivity(lanjut);
             }
         });

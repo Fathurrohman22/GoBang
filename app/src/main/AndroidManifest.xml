@@ -27,15 +27,17 @@
         <activity android:name="id.gobang.app.Activity.PosGiro" />
         <activity android:name="id.gobang.app.Activity.Lacak" />
         <activity android:name="id.gobang.app.Activity.Barcode" />
-        <activity android:name="id.gobang.app.Activity.Pembayaran" />
-        <activity android:name="id.gobang.app.Activity.ValidasiData" />
-        <activity android:name="id.gobang.app.Activity.Pemesanan" />
-        <activity android:name="id.gobang.app.Activity.SplashScreen">
+        <activity android:name="id.gobang.app.Activity.Pembayaran" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="id.gobang.app.Activity.ValidasiData" />
+        <activity android:name="id.gobang.app.Activity.Pemesanan" />
+        <activity android:name="id.gobang.app.Activity.SplashScreen">
+
         </activity>
         <activity android:name="id.gobang.app.Activity.DetailData" />
         <activity android:name="id.gobang.app.Activity.WelcomeActivity" />

@@ -1,4 +1,4 @@
-package id.gobang.app;
+package id.gobang.app.Model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

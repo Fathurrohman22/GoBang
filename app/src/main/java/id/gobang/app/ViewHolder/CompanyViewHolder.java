@@ -1,4 +1,4 @@
-package id.gobang.app;
+package id.gobang.app.ViewHolder;
 
 import android.view.View;
 import android.view.animation.RotateAnimation;
@@ -6,6 +6,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.thoughtbot.expandablerecyclerview.viewholders.GroupViewHolder;
+
+import id.gobang.app.Adapter.Company;
+import id.gobang.app.R;
 
 import static android.view.animation.Animation.RELATIVE_TO_SELF;
 

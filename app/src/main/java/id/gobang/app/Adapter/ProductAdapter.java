@@ -9,11 +9,10 @@ import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 
 import java.util.List;
 
-import id.gobang.app.Company;
-import id.gobang.app.CompanyViewHolder;
-import id.gobang.app.Product;
-import id.gobang.app.ProductViewHolder;
+import id.gobang.app.Model.Product;
 import id.gobang.app.R;
+import id.gobang.app.ViewHolder.CompanyViewHolder;
+import id.gobang.app.ViewHolder.ProductViewHolder;
 
 public class ProductAdapter extends ExpandableRecyclerViewAdapter<CompanyViewHolder, ProductViewHolder> {
     public ProductAdapter(List<? extends ExpandableGroup> groups) {

@@ -64,7 +64,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:text="Masukkan Data"
+                        android:text="@string/input_data_penerima"
                         android:textAlignment="center"
                         android:textColor="@color/colorPrimary"
                         android:textSize="20sp"
@@ -78,7 +78,7 @@
                 android:id="@+id/tvCek"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Silahkan masukan data Anda di bawah ini"
+                android:text="@string/silahkan_masukan_data_penerima_di_bawah_ini"
                 android:textAlignment="center"
                 android:textColor="@color/colorBlack" />
 
@@ -106,7 +106,8 @@
                         android:layout_height="wrap_content"
                         android:text="@string/nomor_tilang"
                         android:textColor="@color/colorBlack"
-                        android:textSize="10sp" />
+                        android:textSize="10sp"
+                        tools:ignore="SmallSp" />
 
                     <TextView
                         android:id="@+id/tvidTilang"
@@ -117,6 +118,34 @@
                         android:text="@string/d221098"
                         android:textColor="@color/colorBlack"
                         android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/nama_penerima"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="10sp"
+                        tools:ignore="SmallSp" />
+
+                    <EditText
+                        android:id="@+id/etNama"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:hint="@string/masukkan_nama_lengkap_penerima"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/provinsi"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="10sp"
+                        tools:ignore="SmallSp" />
 
                     <gr.escsoft.michaelprimez.searchablespinner.SearchableSpinner
                         android:id="@+id/spinner_provinsi"
@@ -131,9 +160,17 @@
                         app:BordersSize="1dp"
                         app:BoarderColor="@color/colorPrimary"
                         app:NoItemsFoundText="Data Tidak Ditemukan"
-                        app:SearchHintText="Cari Provinsi ..."
+                        app:SearchHintText="Cari provinsi disini..."
                         app:KeepLastSearch="false"
                         app:RevealEmptyText="Pilih Provinsi" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/kabupaten_kota"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="10sp"
+                        tools:ignore="SmallSp" />
 
                     <gr.escsoft.michaelprimez.searchablespinner.SearchableSpinner
                         android:id="@+id/spinner_kabupaten"
@@ -148,8 +185,16 @@
                         app:BordersSize="1dp"
                         app:BoarderColor="@color/colorPrimary"
                         app:NoItemsFoundText="Data Tidak Ditemukan"
-                        app:SearchHintText="Cari Kabupaten ..."
-                        app:RevealEmptyText="Pilih Kabupaten" />
+                        app:SearchHintText="Cari kabupaten / kota disini..."
+                        app:RevealEmptyText="Pilih Kabupaten / Kota" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/kecamatan"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="10sp"
+                        tools:ignore="SmallSp" />
 
                     <gr.escsoft.michaelprimez.searchablespinner.SearchableSpinner
                         android:id="@+id/spinner_kecamatan"
@@ -164,8 +209,16 @@
                         app:BordersSize="1dp"
                         app:BoarderColor="@color/colorPrimary"
                         app:NoItemsFoundText="Data Tidak Ditemukan"
-                        app:SearchHintText="Cari Kecamatan ..."
+                        app:SearchHintText="Cari kecamatan disini..."
                         app:RevealEmptyText="Pilih Kecamatan" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/desa"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="10sp"
+                        tools:ignore="SmallSp" />
 
                     <gr.escsoft.michaelprimez.searchablespinner.SearchableSpinner
                         android:id="@+id/spinner_desa"
@@ -180,84 +233,16 @@
                         app:BordersSize="1dp"
                         app:BoarderColor="@color/colorPrimary"
                         app:NoItemsFoundText="Data Tidak Ditemukan"
-                        app:SearchHintText="Cari Desa ..."
+                        app:SearchHintText="Cari desa disini..."
                         app:RevealEmptyText="Pilih Desa" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Nama Penerima"
+                        android:text="@string/detail_alamat"
                         android:textColor="@color/colorBlack"
-                        android:textSize="10sp" />
-
-                    <EditText
-                        android:id="@+id/etNama"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="8dp"
-                        android:paddingBottom="8dp"
-                        android:hint="Masukkan Nama Anda"
-                        android:inputType="textPersonName"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_marginTop="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="12sp"
-                        android:text="Silahkan masukan data pengiriman barang bukti"
-                        android:textColor="@color/colorBlack" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="Provinsi"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="10sp" />
-
-                    <com.isapanah.awesomespinner.AwesomeSpinner
-                        android:id="@+id/my_spinnerProvinsi"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:spinnerDirection="ltr"
-                        app:spinnerHint="Pilih Provinsi" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Kabupaten/Kota"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="10sp" />
-
-                    <com.isapanah.awesomespinner.AwesomeSpinner
-                        android:id="@+id/my_spinnerKota"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:spinnerDirection="ltr"
-                        app:spinnerHint="Pilih Kabupaten/Kota" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Kecamatan"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="10sp" />
-
-                    <com.isapanah.awesomespinner.AwesomeSpinner
-                        android:id="@+id/my_spinnerKecamatan"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:spinnerDirection="ltr"
-                        app:spinnerHint="Pilih Kecamatan" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Detail Alamat"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="10sp" />
+                        android:textSize="10sp"
+                        tools:ignore="SmallSp" />
 
                     <EditText
                         android:id="@+id/etDetailAlamat"
@@ -265,16 +250,17 @@
                         android:layout_height="wrap_content"
                         android:paddingTop="8dp"
                         android:paddingBottom="8dp"
-                        android:hint="mis : nama gang, jalan, nomor rumah"
+                        android:hint="@string/cth_no_rt_rw_no_rumah_nama_gang"
                         android:textColor="@color/colorBlack"
                         android:textSize="14sp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Kode Pos"
+                        android:text="@string/kode_pos"
                         android:textColor="@color/colorBlack"
-                        android:textSize="10sp" />
+                        android:textSize="10sp"
+                        tools:ignore="SmallSp" />
 
                     <EditText
                         android:id="@+id/etKodePos"
@@ -282,7 +268,7 @@
                         android:layout_height="wrap_content"
                         android:paddingTop="8dp"
                         android:paddingBottom="8dp"
-                        android:hint="Cth : 53192"
+                        android:hint="@string/cth_53181"
                         android:inputType="number"
                         android:textColor="@color/colorBlack"
                         android:textSize="14sp" />
@@ -291,9 +277,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Nomor HP/WA"
+                        android:text="@string/nomor_handphone"
                         android:textColor="@color/colorBlack"
-                        android:textSize="10sp" />
+                        android:textSize="10sp"
+                        tools:ignore="SmallSp" />
 
                     <EditText
                         android:id="@+id/etNoHP"
@@ -301,99 +288,14 @@
                         android:layout_height="wrap_content"
                         android:paddingTop="8dp"
                         android:paddingBottom="8dp"
-                        android:hint="Cth : 08577475887"
+                        android:hint="@string/cth_085123456789"
                         android:inputType="number"
                         android:textColor="@color/colorBlack"
                         android:textSize="14sp" />
 
-                    <!--                    <TextView-->
-                    <!--                        android:layout_width="match_parent"-->
-                    <!--                        android:layout_height="wrap_content"-->
-                    <!--                        android:text="Alamat Antar"-->
-                    <!--                        android:textColor="@color/colorBlack"-->
-                    <!--                        android:textSize="10sp" />-->
-
-                    <!--                    <EditText-->
-                    <!--                        android:id="@+id/etAlamatAntar"-->
-                    <!--                        android:layout_width="match_parent"-->
-                    <!--                        android:layout_height="wrap_content"-->
-                    <!--                        android:paddingTop="8dp"-->
-                    <!--                        android:paddingBottom="8dp"-->
-                    <!--                        android:hint="Pilih Alamat"-->
-                    <!--                        android:clickable="true"-->
-                    <!--                        android:focusable="false"-->
-                    <!--                        android:inputType="text"-->
-                    <!--                        android:textColor="@color/colorBlack"-->
-                    <!--                        android:textSize="14sp" />-->
-
-                    <!--                    <TextView-->
-                    <!--                        android:layout_width="match_parent"-->
-                    <!--                        android:layout_height="wrap_content"-->
-                    <!--                        android:text="Titik Lokasi"-->
-                    <!--                        android:textColor="@color/colorBlack"-->
-                    <!--                        android:textSize="10sp" />-->
-
-                    <!--                    <EditText-->
-                    <!--                        android:id="@+id/etLokasi"-->
-                    <!--                        android:layout_width="match_parent"-->
-                    <!--                        android:layout_height="wrap_content"-->
-                    <!--                        android:paddingTop="8dp"-->
-                    <!--                        android:paddingBottom="8dp"-->
-                    <!--                        android:hint="Lokasi"-->
-                    <!--                        android:inputType="text"-->
-                    <!--                        android:clickable="true"-->
-                    <!--                        android:focusable="false"-->
-                    <!--                        android:textColor="@color/colorBlack"-->
-                    <!--                        android:textSize="14sp" />-->
-
-                    <!--                    <TextView-->
-                    <!--                        android:layout_width="match_parent"-->
-                    <!--                        android:layout_height="wrap_content"-->
-                    <!--                        android:text="Detail Alamat"-->
-                    <!--                        android:textColor="@color/colorBlack"-->
-                    <!--                        android:textSize="10sp" />-->
-
-                    <!--                    <EditText-->
-                    <!--                        android:id="@+id/etDetailAlamat"-->
-                    <!--                        android:layout_width="match_parent"-->
-                    <!--                        android:layout_height="wrap_content"-->
-                    <!--                        android:paddingTop="8dp"-->
-                    <!--                        android:paddingBottom="8dp"-->
-                    <!--                        android:hint="mis : nama gang, jalan, nomor rumah"-->
-                    <!--                        android:textColor="@color/colorBlack"-->
-                    <!--                        android:textSize="14sp" />-->
-
-                    <!--                    <TextView-->
-                    <!--                        android:layout_width="match_parent"-->
-                    <!--                        android:layout_height="wrap_content"-->
-                    <!--                        android:text="Upload Bukti Tilang"-->
-                    <!--                        android:textColor="@color/colorBlack"-->
-                    <!--                        android:textSize="10sp" />-->
-
                 </LinearLayout>
 
             </LinearLayout>
-
-            <!--            <RelativeLayout-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:paddingTop="4dp"-->
-            <!--                android:paddingBottom="4dp">-->
-
-            <!--                <TextView-->
-            <!--                    android:layout_width="wrap_content"-->
-            <!--                    android:layout_height="match_parent"-->
-            <!--                    android:layout_alignParentStart="true"-->
-            <!--                    android:layout_centerInParent="true"/>-->
-
-            <!--                <TextView-->
-            <!--                    android:id="@+id/tvPotongan"-->
-            <!--                    android:layout_width="wrap_content"-->
-            <!--                    android:layout_height="match_parent"-->
-            <!--                    android:layout_alignParentEnd="true"-->
-            <!--                    android:layout_centerInParent="true"-->
-            <!--                    android:textColor="@color/colorPrimary" />-->
-            <!--            </RelativeLayout>-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -410,7 +312,7 @@
                     android:layout_marginBottom="16dp"
                     android:textColor="@color/colorWhite"
                     android:id="@+id/btnLanjut"
-                    android:text="Lanjut"
+                    android:text="@string/lanjut"
                     android:background="@drawable/button_effect" />
 
             </LinearLayout>
