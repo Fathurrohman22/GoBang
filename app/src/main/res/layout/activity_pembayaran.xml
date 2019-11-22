@@ -288,7 +288,7 @@
                             android:layout_height="match_parent"
                             android:layout_alignParentEnd="true"
                             android:text="disini"
-                            android:textColor="@color/colorRed" />
+                            android:textColor="@color/colorBlue" />
 
                     </RelativeLayout>
 
@@ -311,7 +311,7 @@
                     android:layout_marginTop="16dp"
                     android:textColor="@color/colorWhite"
                     android:id="@+id/btnLanjut"
-                    android:text="Lanjut"
+                    android:text="Selesai"
                     android:background="@drawable/button_effect" />
 
             </LinearLayout>

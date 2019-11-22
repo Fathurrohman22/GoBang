@@ -1,11 +1,14 @@
 package fathurrohman.cv.gobang;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,10 +17,14 @@ import com.isapanah.awesomespinner.AwesomeSpinner;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
 public class Pemesanan extends AppCompatActivity {
 
     Button lanjut;
     ImageView silang;
+    TextView id_tilang;
+    EditText nama, detail_alamat, kodepos, nohp;
     AwesomeSpinner spinnerProv, spinnerKab, spinnerKec;
     List<String> list;
 
@@ -28,13 +35,42 @@ public class Pemesanan extends AppCompatActivity {
 
         lanjut = findViewById(R.id.btnLanjut);
         silang = findViewById(R.id.btnClose);
+        id_tilang = findViewById(R.id.tvidTilang);
+        nama = findViewById(R.id.etNama);
+        detail_alamat = findViewById(R.id.etDetailAlamat);
+        kodepos = findViewById(R.id.etKodePos);
+        nohp = findViewById(R.id.etNoHP);
+        id_tilang.setText(getIntent().getStringExtra("no_reg_tilang"));
 
         lanjut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent lanjut = new Intent(Pemesanan.this, Pembayaran.class);
-                startActivity(lanjut);
-                finish();
+                new SweetAlertDialog(Pemesanan.this, SweetAlertDialog.WARNING_TYPE)
+                        .setTitleText("Peringatan!")
+                        .setContentText("Apakah data yang Anda masukkan sudah benar?")
+                        .setConfirmText("Benar")
+                        .setCancelText("Salah")
+                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sDialog) {
+                                sDialog.changeAlertType(SweetAlertDialog.PROGRESS_TYPE);
+                                sDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+                                sDialog.setTitleText("Loading ...");
+                                sDialog.showCancelButton(false);
+                                sDialog.setContentText("Tunggu beberapa saat");
+                                sDialog.setCancelable(false);
+                                sDialog.show();
+                            }
+                        })
+                        .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                sweetAlertDialog.dismissWithAnimation();
+                            }
+                        }).show();
+//                Intent lanjut = new Intent(Pemesanan.this, Pembayaran.class);
+//                startActivity(lanjut);
+//                finish();
             }
         });
 

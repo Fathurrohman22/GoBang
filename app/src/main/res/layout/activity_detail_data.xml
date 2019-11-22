@@ -137,19 +137,19 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/jenis_kendaraan"
+                        android:text="Alamat"
                         android:textColor="@color/colorBlack"
                         android:textSize="10sp" />
 
-                    <!--                    <TextView-->
-                    <!--                        android:id="@+id/tvJenisKendaraan"-->
-                    <!--                        android:layout_width="match_parent"-->
-                    <!--                        android:layout_height="wrap_content"-->
-                    <!--                        android:paddingTop="8dp"-->
-                    <!--                        android:paddingBottom="8dp"-->
-                    <!--                        android:text="@string/sepeda_motor"-->
-                    <!--                        android:textColor="@color/colorBlack"-->
-                    <!--                        android:textSize="14sp" />-->
+                    <TextView
+                        android:id="@+id/tvAlamat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:text="Banyumas"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp" />
 
                     <!--                    <TextView-->
                     <!--                        android:layout_width="match_parent"-->
