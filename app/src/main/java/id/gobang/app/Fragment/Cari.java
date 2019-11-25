@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import id.gobang.app.Activity.Lacak;
 import id.gobang.app.Activity.PosGiro;
+import id.gobang.app.Activity.Tentang;
 import id.gobang.app.R;
 
 
@@ -86,13 +87,13 @@ public class Cari extends Fragment {
 //            }
 //        });
 
-//        tentang.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i = new Intent(getActivity(), About.class);
-//                getContext().startActivity(i);
-//            }
-//        });
+        tentang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), Tentang.class);
+                getContext().startActivity(i);
+            }
+        });
         return v;
     }
 
