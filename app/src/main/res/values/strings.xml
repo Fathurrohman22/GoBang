@@ -60,8 +60,16 @@
     <string name="salin_nomor_virtual_account">Salin Nomor Virtual Account</string>
     <string name="total_pembayaran">Total Pembayaran</string>
     <string name="rp_71_000">Rp 71.000</string>
+    <string name="gobang">Gobang adalah suatu aplikasi yang memudahkan masyarakat dalam pengambilan barang bukti tilang. Aplikasi ini merupakan aplikasi resmi yang dikeluarkan oleh Kejaksaan Negeri yang bekerja sama dengan Kantor Pos. Dengan menggunakan aplikasi ini, masyarakat dapat menghemat waktunya tanpa harus mengantre ambil bukti tilang.</string>
 
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="tentang_aplikasi_gobang">Tentang Aplikasi Gobang</string>
+    <string name="pos_giro_mobile">Pos Giro Mobile</string>
+    <string name="go_barang_bukti_dan_tilang">Go Barang Bukti dan Tilang</string>
+    <string name="supported_by_pt_pos_indonesia">Supported by PT. POS Indonesia</string>
+    <string name="cari_data_tilang">Cari Data Tilang</string>
+    <string name="lacak_pengiriman">Lacak Pengiriman</string>
+    <string name="tentang_aplikasi">Tentang Aplikasi</string>
 </resources>

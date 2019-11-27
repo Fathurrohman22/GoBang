@@ -6,14 +6,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import id.gobang.app.Activity.Lacak;
 import id.gobang.app.Activity.PosGiro;
+import id.gobang.app.Activity.Tentang;
 import id.gobang.app.R;
 
 
@@ -21,7 +22,7 @@ import id.gobang.app.R;
  * A simple {@link Fragment} subclass.
  */
 public class Cari extends Fragment {
-    CardView cari, lacak, pgm, carapakai, carabayar, tentang;
+    LinearLayout cari, lacak, pgm, carapakai, carabayar, tentang;
 
 
     public Cari() {
@@ -86,13 +87,13 @@ public class Cari extends Fragment {
 //            }
 //        });
 
-//        tentang.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i = new Intent(getActivity(), About.class);
-//                getContext().startActivity(i);
-//            }
-//        });
+        tentang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), Tentang.class);
+                getContext().startActivity(i);
+            }
+        });
         return v;
     }
 

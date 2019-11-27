@@ -16,8 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignBottom="@+id/guidline"
-        android:layout_marginBottom="50dp"
-        android:background="@drawable/ic_toolbar_profile" />
+        android:layout_marginBottom="50dp" />
 
     <!--<ImageView-->
         <!--android:id="@+id/ellipse"-->
@@ -43,7 +42,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginBottom="10dp"
         android:text="GOBANG"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorBlack"
         android:textSize="16sp"
         android:textStyle="bold" />
 
@@ -53,9 +52,9 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/toolbar"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="20dp"
         android:text="Go Barang Bukti dan Tilang"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorBlack"
         android:textSize="14sp" />
 
     <ScrollView
@@ -74,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
-                android:text="Description"
+                android:text="Deskripsi"
                 android:textColor="@color/colorAccent"
                 android:textStyle="bold"
                 android:textSize="14dp"/>
@@ -83,7 +82,7 @@
                 android:id="@+id/tvDesc1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
+                android:text="@string/gobang"
                 android:layout_marginTop="5dp"
                 android:layout_below="@+id/tvDesc"
                 android:layout_alignLeft="@+id/tvDesc"

@@ -22,6 +22,7 @@
         app:inactive_item_color="@color/black_tua_hehe"
         app:active_item_color="@color/colorPrimary"
         app:inactive_centre_button_icon_color="@color/white"
+        app:active_centre_button_icon_color="@color/white"
         app:centre_button_icon="@drawable/ic_search_black_24dp"
         app:centre_button_color="@color/colorPrimary"
         app:space_background_color="@color/white"

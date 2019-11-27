@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Objects;
+
 import id.gobang.app.Helper.Bantuan;
 import id.gobang.app.R;
 
@@ -72,6 +74,8 @@ private Context context = StatusBarangBukti.this;
         tvNama.setText(getIntent().getStringExtra("nama_penerima"));
         tvNoRef.setText(getIntent().getStringExtra("refnumber"));
         tvNoRef.setText(getIntent().getStringExtra("refnumber"));
-        resi.setText(new Bantuan(context).isNullOrEmpty(getIntent().getStringExtra("no_resi")) ? "Proses Input No Resi" : getIntent().getStringExtra("no_resi"));
+        resi.setText(new Bantuan(context).isNullOrEmpty(getIntent().getStringExtra("no_resi")) ||
+                Objects.requireNonNull(getIntent().getStringExtra("no_resi")).equalsIgnoreCase("null") ?
+                "Proses Input No Resi" : getIntent().getStringExtra("no_resi"));
     }
 }
