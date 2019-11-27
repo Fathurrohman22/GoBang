@@ -21,6 +21,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Objects;
 
 import cn.iwgang.countdownview.CountdownView;
 import id.gobang.app.Adapter.Company;
@@ -32,8 +33,12 @@ import id.gobang.app.R;
 public class Pembayaran extends AppCompatActivity {
 
     Button lanjut;
+    Button btnDownloadPGM;
     ImageView silang;
-    TextView virtual, salin, aplikasi;
+    TextView virtual, salin, aplikasi, tvTotalPembayaran;
+    TextView tvNominalDendaTilang;
+    TextView tvNominalAntar;
+    TextView tvBiayaAdministrasi;
     RecyclerView recyclerView;
     private Context context = Pembayaran.this;
 
@@ -41,24 +46,6 @@ public class Pembayaran extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pembayaran);
-
-        CountdownView mCvCountdownView = findViewById(R.id.countdown);
-        String expired = "2019-11-23 11:29:30";
-        @SuppressLint("SimpleDateFormat")
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date date_expired;
-        Date date_now = new Date();
-        try {
-            date_expired = format.parse(expired);
-            long time = date_expired.getTime() - date_now.getTime();
-            mCvCountdownView.start(time);
-            for (int i = 0; i < 1000; i++) {
-                mCvCountdownView.updateShow(time);
-            }
-        } catch (ParseException e) {
-            new Bantuan(context).toastLong(e.getMessage());
-            e.printStackTrace();
-        }
 
         init();
         ArrayList<Company> companies = new ArrayList<>();
@@ -84,14 +71,52 @@ public class Pembayaran extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
+    @SuppressLint("SetTextI18n")
     private void init() {
         lanjut = findViewById(R.id.btnLanjut);
         silang = findViewById(R.id.btnClose);
         virtual = findViewById(R.id.VirtualAccount);
         salin = findViewById(R.id.SalinRek);
         aplikasi = findViewById(R.id.aplikasiPGM);
+        btnDownloadPGM = findViewById(R.id.btnDownloadPGM);
+
+        tvNominalDendaTilang = findViewById(R.id.tvNominalDendaTilang);
+        tvNominalAntar = findViewById(R.id.tvNominalAntar);
+        tvBiayaAdministrasi = findViewById(R.id.tvBiayaAdministrasi);
+
+        tvTotalPembayaran = findViewById(R.id.tvTotalPembayaran);
+        CountdownView mCvCountdownView = findViewById(R.id.countdown);
+
         recyclerView = findViewById(R.id.recyclerViewMetode);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        virtual.setText(getIntent().getStringExtra("no_va"));
+        tvTotalPembayaran.setText("Rp " + new Bantuan(context)
+                .formatHarga(String.valueOf(Integer.parseInt(Objects.requireNonNull(getIntent().getStringExtra("denda_tilang"))) +
+                        Integer.parseInt(Objects.requireNonNull(getIntent().getStringExtra("biaya_antar"))) +
+                        Integer.parseInt(Objects.requireNonNull(getIntent().getStringExtra("biaya_administrasi"))))));
+
+        tvNominalDendaTilang.setText("Rp " + new Bantuan(context).formatHarga(getIntent().getStringExtra("denda_tilang")));
+        tvNominalAntar.setText("Rp " + new Bantuan(context).formatHarga(getIntent().getStringExtra("biaya_antar")));
+        tvBiayaAdministrasi.setText("Rp " + new Bantuan(context).formatHarga(getIntent().getStringExtra("biaya_administrasi")));
+
+
+        String expired = getIntent().getStringExtra("waktu_expired");
+        @SuppressLint("SimpleDateFormat")
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date_expired;
+        Date date_now = new Date();
+        try {
+            date_expired = format.parse(expired);
+            long time = date_expired.getTime() - date_now.getTime();
+            mCvCountdownView.start(time);
+            for (int i = 0; i < 1000; i++) {
+                mCvCountdownView.updateShow(time);
+            }
+        } catch (ParseException e) {
+            new Bantuan(context).toastLong(e.getMessage());
+            e.printStackTrace();
+        }
 
         aplikasi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,17 +141,49 @@ public class Pembayaran extends AppCompatActivity {
         lanjut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent lanjut = new Intent(Pembayaran.this, ResiKirim.class);
-                startActivity(lanjut);
+                startActivity(new Intent(context, MainActivity.class));
+                finish();
             }
         });
 
         silang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(context, MainActivity.class));
                 finish();
+            }
+        });
+
+        if(!new Bantuan(context).isAppInstalled("com.posindonesia.giropos")){
+            btnDownloadPGM.setText("DOWNLOAD POS GIRO MOBILE");
+        } else {
+            btnDownloadPGM.setText("BUKA POS GIRO MOBILE");
+        }
+
+        btnDownloadPGM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(new Bantuan(context).isAppInstalled("com.posindonesia.giropos")){
+                    Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.posindonesia.giropos");
+                    if (launchIntent != null) {
+                        startActivity(launchIntent);
+                    } else {
+                        new Bantuan(context).toastLong("Terjadi Kesalahan");
+                    }
+                } else {
+                    Intent i = new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("https://play.google.com/store/apps/details?id=com.posindonesia.giropos&hl=en_US"));
+                    startActivity(i);
+                }
+
             }
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(context, MainActivity.class));
+        finish();
+    }
 }

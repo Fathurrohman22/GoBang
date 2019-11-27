@@ -75,7 +75,6 @@
 
             </RelativeLayout>
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -191,6 +190,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="16dp">
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -199,15 +199,15 @@
                         android:textColor="@color/colorBlack" />
 
                     <TextView
-                        android:id="@+id/tvidTotal"
+                        android:id="@+id/tvTotalPembayaran"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingTop="8dp"
                         android:paddingBottom="8dp"
-                        android:textStyle="bold"
                         android:text="@string/rp_71_000"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tvJudulDetail"
@@ -233,7 +233,7 @@
                             android:textColor="@color/colorBlack" />
 
                         <TextView
-                            android:id="@+id/tvNominal"
+                            android:id="@+id/tvNominalDendaTilang"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_alignParentEnd="true"
@@ -257,11 +257,11 @@
                             android:textColor="@color/colorBlack" />
 
                         <TextView
-                            android:id="@+id/tvAntar"
+                            android:id="@+id/tvNominalAntar"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_alignParentEnd="true"
-                            android:layout_centerInParent="true"
+                            android:layout_centerHorizontal="true"
                             android:text="Rp 20.000"
                             android:textColor="@color/colorBlack" />
 
@@ -295,71 +295,86 @@
 
             </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorWhite"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="@color/colorPrimary" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:layout_marginTop="16dp"
+                android:background="@color/colorWhite"
+                android:orientation="vertical">
 
-                <TextView
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/colorPrimary" />
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Cara Pembayaran"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/recyclerViewMetode" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:visibility="gone">
+                    android:padding="16dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="16dp"
-                        android:text="*Apabila belum mempunyai Aplikasi PGM silahkan klik"
-                        android:textColor="@color/colorRed" />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cara Pembayaran"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/aplikasiPGM"
-                        android:layout_width="wrap_content"
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_alignParentEnd="true"
-                        android:text="disini"
-                        android:textColor="@color/colorBlue" />
+                        android:id="@+id/recyclerViewMetode" />
 
-                </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginTop="16dp"
+                            android:text="*Apabila belum mempunyai Aplikasi PGM silahkan klik"
+                            android:textColor="@color/colorRed" />
+
+                        <TextView
+                            android:id="@+id/aplikasiPGM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:text="disini"
+                            android:textColor="@color/colorBlue" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
             </LinearLayout>
 
-        </LinearLayout>
-
             <LinearLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:textColor="@color/colorWhite"
+                    android:id="@+id/btnDownloadPGM"
+                    android:text="Download POS Giro Mobile"
+                    android:background="@drawable/button_effect_oren" />
+
+                <Button
+                    android:visibility="gone"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

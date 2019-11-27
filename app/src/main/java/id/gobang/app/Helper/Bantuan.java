@@ -2,6 +2,7 @@ package id.gobang.app.Helper;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.widget.Toast;
 
 import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
@@ -102,5 +103,18 @@ public class Bantuan {
                 .setPositiveButton(android.R.string.yes, null)
                 .setCancelable(false)
                 .show();
+    }
+
+    public boolean isNullOrEmpty(String str) {
+        return str == null || str.isEmpty();
+    }
+
+    public boolean isAppInstalled(String packageName) {
+        try {
+            context.getPackageManager().getPackageInfo(packageName, 0);
+            return true;
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
     }
 }

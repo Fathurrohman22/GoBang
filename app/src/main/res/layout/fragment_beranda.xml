@@ -9,8 +9,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:cardBackgroundColor="#f7f7f7"
-        app:cardCornerRadius="45dp">
+        app:cardBackgroundColor="@color/gray_muda_banget">
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"

@@ -5,7 +5,7 @@ android {
     buildToolsVersion "29.0.1"
     defaultConfig {
         applicationId "id.gobang.app"
-        minSdkVersion 22
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -44,6 +44,9 @@ dependencies {
 
     //TODO : https://github.com/michaelprimez/searchablespinner
     implementation 'gr.escsoft.michaelprimez.searchablespinner:SearchableSpinner:1.0.9'
+
+    //TODO : https://github.com/armcha/Space-Navigation-View
+    implementation 'com.github.armcha:SpaceNavigationView:1.6.0'
 }
 
 apply plugin: 'com.google.gms.google-services'

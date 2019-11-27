@@ -3,15 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Activity.MainActivity">
-
-    <!--<ImageView-->
-        <!--android:layout_width="500dp"-->
-        <!--android:layout_height="500dp"-->
-        <!--android:layout_alignParentRight="true"-->
-        <!--android:layout_marginTop="30dp"-->
-        <!--android:layout_marginRight="-150dp"-->
-        <!--android:src="@drawable/ic_circle" />-->
 
     <FrameLayout
         android:id="@+id/container"
@@ -20,23 +13,23 @@
         android:layout_above="@+id/footer"
         android:layout_marginBottom="-50dp"/>
 
-    <!--    <androidx.appcompat.widget.Toolbar-->
-    <!--        android:id="@+id/toolbar"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:background="@drawable/ic_header" />-->
+    <com.luseen.spacenavigation.SpaceNavigationView
+        android:id="@+id/spaceNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        app:inactive_item_color="@color/black_tua_hehe"
+        app:active_item_color="@color/colorPrimary"
+        app:inactive_centre_button_icon_color="@color/white"
+        app:centre_button_icon="@drawable/ic_search_black_24dp"
+        app:centre_button_color="@color/colorPrimary"
+        app:space_background_color="@color/white"
+        app:space_item_icon_only_size="@dimen/dp_32"/>
 
-    <!--    <TextView-->
-    <!--        android:id="@+id/tvTitle"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_margin="20dp"-->
-    <!--        android:fontFamily="@font/nexabold"-->
-    <!--        android:text="G O B A N G"-->
-    <!--        android:textColor="@color/colorWhite"-->
-    <!--        android:textSize="18sp" />-->
 
     <ImageView
+        android:visibility="gone"
         android:id="@+id/footer"
         android:layout_width="match_parent"
         android:layout_height="80dp"
@@ -45,6 +38,7 @@
         android:src="@drawable/ic_footer" />
 
     <ImageButton
+        android:visibility="gone"
         android:id="@+id/btHome"
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -56,6 +50,7 @@
         android:src="@drawable/ic_search" />
 
     <ImageView
+        android:visibility="gone"
         android:id="@+id/btAccount"
         android:layout_width="80dp"
         android:layout_height="80dp"
@@ -68,6 +63,7 @@
         android:tint="@color/colorWhite"/>
 
     <ImageView
+        android:visibility="gone"
         android:id="@+id/btFavorite"
         android:layout_width="80dp"
         android:layout_height="80dp"
@@ -78,24 +74,5 @@
         android:padding="20dp"
         android:tint="@color/colorWhite"
         android:src="@drawable/ic_home_icon" />
-
-    <!--<FrameLayout-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--android:id="@+id/navigasi"-->
-        <!--android:layout_above="@id/menu"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent" />-->
-
-    <!--<com.google.android.material.bottomnavigation.BottomNavigationView-->
-        <!--android:id="@+id/menu"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:background="@color/bg_screen1"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--app:itemIconTint="@color/white"-->
-        <!--app:itemTextColor="@color/white"-->
-        <!--android:padding="2dp"-->
-        <!--app:menu="@menu/navigation">-->
-    <!--</com.google.android.material.bottomnavigation.BottomNavigationView>-->
 
 </RelativeLayout>

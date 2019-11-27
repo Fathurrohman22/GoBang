@@ -2,8 +2,11 @@ package id.gobang.app.Helper;
 
 public class API {
 
-    public static final String KEY = "gobangapp";
-    private static final String INTI_URL = "http://api.gobang.kejari-purwokerto.go.id/";
+    public static final String USERNAME = "gobangapp";
+    public static final String PASSWORD = "92aa502a8323c9a4ffb155615158b0f3";
+
+//    public static final String KEY = "gobangapp";
+    private static final String INTI_URL = "http://api.gobang-dev.kejari-purwokerto.go.id/";
     private static final String REQUEST = INTI_URL + "request/";
     public static final String URL_CEK_DATA = REQUEST + "cek_data";
     public static final String URL_PERMINTAAN = REQUEST + "add_permintaan";

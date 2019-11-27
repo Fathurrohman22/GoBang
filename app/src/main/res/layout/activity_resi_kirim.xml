@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activity.ResiKirim">
+    tools:context=".Activity.StatusBarangBukti">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -107,10 +107,11 @@
                         android:text="Pesanan Dikirim"
                         android:textColor="@color/colorPrimary"
                         android:layout_marginTop="10dp"
-                        android:textSize="12sp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <LinearLayout
+                        android:visibility="gone"
                         android:layout_width="match_parent"
                         android:layout_height="2dp"
                         android:layout_marginTop="4dp"
@@ -137,7 +138,6 @@
                             android:layout_alignParentStart="true"
                             android:layout_centerInParent="true"
                             android:text="Nomor Tilang"
-                            android:textSize="12sp"
                             android:textColor="@color/colorBlack" />
 
                         <TextView
@@ -147,7 +147,6 @@
                             android:layout_alignParentEnd="true"
                             android:layout_centerInParent="true"
                             android:text="D2210"
-                            android:textSize="12sp"
                             android:textColor="@color/colorBlack" />
                     </RelativeLayout>
 
@@ -162,8 +161,7 @@
                             android:layout_height="match_parent"
                             android:layout_alignParentStart="true"
                             android:layout_centerInParent="true"
-                            android:text="Nama"
-                            android:textSize="12sp"
+                            android:text="Nama Penerima"
                             android:textColor="@color/colorBlack" />
 
                         <TextView
@@ -173,7 +171,32 @@
                             android:layout_alignParentEnd="true"
                             android:layout_centerInParent="true"
                             android:text="Fathurrohman"
-                            android:textSize="12sp"
+                            android:textColor="@color/colorBlack" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerInParent="true"
+                            android:text="Nomor Referensi"
+                            android:textColor="@color/colorBlack" />
+
+                        <TextView
+                            android:id="@+id/tvNoRef"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:text="xxxxx"
                             android:textColor="@color/colorBlack" />
 
 
@@ -191,7 +214,6 @@
                             android:layout_alignParentStart="true"
                             android:layout_centerInParent="true"
                             android:text="Nomor Resi"
-                            android:textSize="12sp"
                             android:textColor="@color/colorBlack" />
 
                         <TextView
@@ -201,7 +223,6 @@
                             android:layout_alignParentEnd="true"
                             android:layout_centerInParent="true"
                             android:text="13455863979"
-                            android:textSize="12sp"
                             android:textColor="@color/colorBlack" />
 
 
@@ -218,11 +239,13 @@
                             android:layout_height="match_parent"
                             android:text="Salin No. Resi"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="12sp" />
+                            android:paddingTop="@dimen/dp_4"
+                            android:paddingBottom="@dimen/dp_4"/>
                     </LinearLayout>
 
 
                     <RelativeLayout
+                        android:visibility="gone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingTop="4dp"
@@ -250,12 +273,9 @@
 
                     </RelativeLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:background="@color/colorPrimary" />
 
                     <TextView
+                        android:visibility="gone"
                         android:id="@+id/tvJudulDetail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -266,6 +286,7 @@
                         android:layout_marginTop="8dp" />
 
                     <RelativeLayout
+                        android:visibility="gone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingTop="4dp"
@@ -290,8 +311,8 @@
                             android:textSize="12sp"
                             android:textColor="@color/colorBlack" />
                     </RelativeLayout>
-
                     <RelativeLayout
+                        android:visibility="gone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingTop="4dp"
@@ -318,13 +339,13 @@
 
 
                     </RelativeLayout>
-
                     <LinearLayout
+                        android:visibility="gone"
                         android:layout_width="match_parent"
                         android:layout_height="2dp"
                         android:background="@color/colorPrimary" />
-
                     <RelativeLayout
+                        android:visibility="gone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingTop="4dp"
@@ -363,7 +384,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -377,6 +397,7 @@
                     android:background="@drawable/button_effect" />
 
                 <Button
+                    android:visibility="gone"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

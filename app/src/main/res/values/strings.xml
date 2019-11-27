@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GoBang</string>
+    <string name="app_name">GoBang Beta</string>
     <string name="title_activity_welcome">Home Screen</string>
     <string name="next">LANJUT</string>
     <string name="skip">LEWATI</string>
@@ -60,4 +60,8 @@
     <string name="salin_nomor_virtual_account">Salin Nomor Virtual Account</string>
     <string name="total_pembayaran">Total Pembayaran</string>
     <string name="rp_71_000">Rp 71.000</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

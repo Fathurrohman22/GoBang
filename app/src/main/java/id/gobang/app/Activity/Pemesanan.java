@@ -1,8 +1,10 @@
 package id.gobang.app.Activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Base64;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -26,7 +28,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 import gr.escsoft.michaelprimez.searchablespinner.SearchableSpinner;
@@ -42,7 +46,6 @@ import id.gobang.app.Model.ProvinsiModel;
 import id.gobang.app.R;
 
 public class Pemesanan extends AppCompatActivity {
-
     Button lanjut;
     ImageView silang;
     TextView id_tilang;
@@ -215,8 +218,8 @@ public class Pemesanan extends AppCompatActivity {
                                         if (position > 0) {
                                             for (int i = 0; i < listProvinsi.size(); i++) {
                                                 if (ProvinsiAdapter.getItem(position).equals(listProvinsi.get(i).getNama())) {
-                                                    if(listProvinsi.get(i).getId().equalsIgnoreCase("33") || //Jawa Tengah
-                                                            listProvinsi.get(i).getId().equalsIgnoreCase("34")){ // DIY
+                                                    if (listProvinsi.get(i).getId().equalsIgnoreCase("33") || //Jawa Tengah
+                                                            listProvinsi.get(i).getId().equalsIgnoreCase("34")) { // DIY
                                                         nominalPos = 12000;
                                                     } else {
                                                         nominalPos = 20000;
@@ -503,33 +506,99 @@ public class Pemesanan extends AppCompatActivity {
                     .setCancelText("Ulangi")
                     .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                         @Override
-                        public void onClick(SweetAlertDialog sDialog) {
-//                        sDialog.changeAlertType(SweetAlertDialog.PROGRESS_TYPE);
-//                        sDialog.getProgressHelper().setBarColor(context.getResources().getColor(R.color.colorPrimary));
-//                        sDialog.setTitleText("Loading ...");
-//                        sDialog.showCancelButton(false);
-//                        sDialog.setContentText("Tunggu beberapa saat");
-//                        sDialog.setCancelable(true);
-//                        sDialog.show();
+                        public void onClick(final SweetAlertDialog sDialog) {
+                            sDialog.changeAlertType(SweetAlertDialog.PROGRESS_TYPE);
+                            sDialog.getProgressHelper().setBarColor(context.getResources().getColor(R.color.colorPrimary));
+                            sDialog.setTitleText("Loading ...");
+                            sDialog.showCancelButton(false);
+                            sDialog.setContentText("Tunggu beberapa saat");
+                            sDialog.setCancelable(false);
+                            sDialog.show();
 
-                            new Bantuan(context).alertDialogDebugging(
-                                    "Nomor Tilang : " + id_tilang.getText().toString() + "\n" +
-                                            "Nama Penerima : " + nama.getText().toString() + "\n" +
-                                            "Provinsi : " + spinner_provinsi.getSelectedItem().toString() + "\n" +
-                                            "Kabupaten : " + spinner_kabupaten.getSelectedItem().toString() + "\n" +
-                                            "Kecamatan : " + spinner_kecamatan.getSelectedItem().toString() + "\n" +
-                                            "Desa : " + spinner_desa.getSelectedItem().toString() + "\n" +
-                                            "Detail Alamat : " + detail_alamat.getText().toString() + "\n" +
-                                            "Kode Pos : " + kodepos.getText().toString() + "\n" +
-                                            "Nomer HP : " + nohp.getText().toString() + "\n" +
-                                            "Alamat Antar : " + "Ds. " + spinner_desa.getSelectedItem().toString() + ", Kec." +
+                            RequestQueue requestQueue = Volley.newRequestQueue(Objects.requireNonNull(context));
+                            StringRequest stringRequest = new StringRequest(Request.Method.POST,
+                                    API.URL_PERMINTAAN,
+                                    new Response.Listener<String>() {
+                                        @Override
+                                        public void onResponse(String response) {
+                                            sDialog.dismissWithAnimation();
+                                            try {
+                                                JSONObject object = new JSONObject(response);
+                                                int response_code = object.getInt("respon_code");
+                                                if (response_code == 201) { //sukses
+                                                    JSONObject data = object.getJSONObject("data");
+                                                    new Bantuan(context).toastLong(object.getString("respon_mess"));
+                                                    Intent intent = new Intent(context, Pembayaran.class);
+                                                    intent.putExtra("waktu_expired", data.getString("waktu_expired"));
+                                                    intent.putExtra("no_va", data.getString("kode_inst") + data.getString("no_va"));
+                                                    intent.putExtra("denda_tilang", String.valueOf(Integer.parseInt(data.getString("nominal_denda")) +
+                                                            Integer.parseInt(data.getString("nominal_perkara"))));
+                                                    intent.putExtra("biaya_antar", data.getString("nominal_pos"));
+                                                    intent.putExtra("biaya_administrasi", data.getString("nominal_gobang"));
+                                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                    startActivity(intent);
+                                                } else {
+                                                    new Bantuan(context).swal_error(object.getString("respon_mess"));
+                                                }
+                                            } catch (JSONException e) {
+                                                e.printStackTrace();
+                                                new Bantuan(context).swal_error(e.getMessage());
+                                            }
+                                        }
+                                    }, new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    sDialog.dismissWithAnimation();
+                                    new Bantuan(context).swal_error("err :" + error.toString());
+                                }
+                            }) {
+                                @Override
+                                protected Map<String, String> getParams() {
+                                    Map<String, String> params = new HashMap<>();
+                                    params.put("no_reg_tilang", id_tilang.getText().toString());
+                                    params.put("nama_penerima", nama.getText().toString());
+                                    params.put("alamat_antar", "Ds. " + spinner_desa.getSelectedItem().toString() + ", Kec." +
                                             spinner_kecamatan.getSelectedItem().toString() + ", " +
                                             spinner_kabupaten.getSelectedItem().toString() + ", " +
-                                            spinner_provinsi.getSelectedItem().toString() + "\n" +
-                                            "Nominal Denda : " + getIntent().getStringExtra("denda") + "\n" +
-                                            "Nominal Perkara : " + getIntent().getStringExtra("biaya_perkara") + "\n" +
-                                            "Nominal Pos : " + nominalPos
-                            );
+                                            spinner_provinsi.getSelectedItem().toString());
+                                    params.put("detail_alamat", detail_alamat.getText().toString());
+                                    params.put("kode_pos", kodepos.getText().toString());
+                                    params.put("nomer_hp", nohp.getText().toString());
+                                    params.put("nominal_denda", getIntent().getStringExtra("denda"));
+                                    params.put("nominal_perkara", getIntent().getStringExtra("biaya_perkara"));
+                                    params.put("nominal_pos", String.valueOf(nominalPos));
+                                    return params;
+                                }
+
+                                @Override
+                                public Map<String, String> getHeaders() {
+                                    HashMap<String, String> params = new HashMap<>();
+                                    String creds = String.format("%s:%s", API.USERNAME, API.PASSWORD);
+                                    String auth = "Basic " + Base64.encodeToString(creds.getBytes(), Base64.DEFAULT);
+                                    params.put("Authorization", auth);
+                                    return params;
+                                }
+                            };
+                            requestQueue.add(stringRequest);
+
+//                            new Bantuan(context).alertDialogDebugging(
+//                                    "Nomor Tilang : " + id_tilang.getText().toString() + "\n" +
+//                                            "Nama Penerima : " + nama.getText().toString() + "\n" +
+//                                            "Provinsi : " + spinner_provinsi.getSelectedItem().toString() + "\n" +
+//                                            "Kabupaten : " + spinner_kabupaten.getSelectedItem().toString() + "\n" +
+//                                            "Kecamatan : " + spinner_kecamatan.getSelectedItem().toString() + "\n" +
+//                                            "Desa : " + spinner_desa.getSelectedItem().toString() + "\n" +
+//                                            "Detail Alamat : " + detail_alamat.getText().toString() + "\n" +
+//                                            "Kode Pos : " + kodepos.getText().toString() + "\n" +
+//                                            "Nomer HP : " + nohp.getText().toString() + "\n" +
+//                                            "Alamat Antar : " + "Ds. " + spinner_desa.getSelectedItem().toString() + ", Kec." +
+//                                            spinner_kecamatan.getSelectedItem().toString() + ", " +
+//                                            spinner_kabupaten.getSelectedItem().toString() + ", " +
+//                                            spinner_provinsi.getSelectedItem().toString() + "\n" +
+//                                            "Nominal Denda : " + getIntent().getStringExtra("denda") + "\n" +
+//                                            "Nominal Perkara : " + getIntent().getStringExtra("biaya_perkara") + "\n" +
+//                                            "Nominal Pos : " + nominalPos
+//                            );
                         }
                     })
                     .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
