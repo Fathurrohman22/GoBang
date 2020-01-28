@@ -28,15 +28,15 @@ public class Tentang extends AppCompatActivity {
         ArrayList<Company> companies = new ArrayList<>();
 
         ArrayList<Product> tentang = new ArrayList<>();
-        tentang.add(new Product("Gobang adalah suatu aplikasi yang memudahkan masyarakat dalam pengambilan barang bukti tilang. Aplikasi ini merupakan aplikasi resmi yang dikeluarkan oleh Kejaksaan Negeri yang bekerja sama dengan Kantor Pos. Dengan menggunakan aplikasi ini, masyarakat dapat menghemat waktunya tanpa harus mengantre ambil bukti tilang."));
+        tentang.add(new Product("GobangPos adalah suatu aplikasi yang memudahkan masyarakat dalam pengambilan barang bukti tilang. Aplikasi ini merupakan aplikasi resmi yang dikeluarkan oleh Kejaksaan Negeri yang bekerja sama dengan Kantor Pos. Dengan menggunakan aplikasi ini, masyarakat dapat menghemat waktunya tanpa harus mengantre ambil bukti tilang."));
 
-        Company ttg = new Company("Apa itu GOBANG?", tentang);
+        Company ttg = new Company("Apa itu GOBANGPOS?", tentang);
         companies.add(ttg);
 
         ArrayList<Product> carapenggunaan = new ArrayList<>();
-        carapenggunaan.add(new Product("1. Buka aplikasi GOBANG"));
+        carapenggunaan.add(new Product("1. Buka aplikasi GOBANGPOS"));
         carapenggunaan.add(new Product("2. Masukkan id tilang Anda."));
-        carapenggunaan.add(new Product("3. Lalu klik tombol cari, aplikasi GOBANG akan menampilkan data tilang."));
+        carapenggunaan.add(new Product("3. Lalu klik tombol cari, aplikasi GOBANGPOS akan menampilkan data tilang."));
         carapenggunaan.add(new Product("4. Kemudian, masukkan data diri Anda dan alamat pengiriman Anda."));
         carapenggunaan.add(new Product("5. Lakukan pembayaran sesuai dengan total biaya yang tetera pada aplikasi, bisa melalui loket pembayaran di kantor pos, ataupun melalui aplikasi Posgiro Mobile"));
         carapenggunaan.add(new Product("6. Apabila pembayaran sudah dilakukan, maka akan muncul nomor resi pengiriman (1x24jam) setelah proses pembayaran"));

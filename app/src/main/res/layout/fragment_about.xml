@@ -13,6 +13,7 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
+        android:background="@color/colorWhite"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignBottom="@+id/guidline"
@@ -25,26 +26,25 @@
         <!--android:layout_alignBottom="@+id/toolbar"-->
         <!--android:layout_alignParentRight="true"/>-->
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imgProfile"
+    <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_above="@+id/tvName"
+        android:src="@drawable/logogobangpos"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/iconcari" />
+        android:layout_marginTop="150dp" />
 
-    <TextView
-        android:id="@+id/tvName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/tvArti"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="10dp"
-        android:text="GOBANG"
-        android:textColor="@color/colorBlack"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/tvName"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_above="@+id/tvArti"-->
+    <!--        android:layout_centerHorizontal="true"-->
+    <!--        android:layout_marginTop="5dp"-->
+    <!--        android:layout_marginBottom="10dp"-->
+    <!--        android:text="GOBANGPOS"-->
+    <!--        android:textColor="@color/colorBlack"-->
+    <!--        android:textSize="16sp"-->
+    <!--        android:textStyle="bold" />-->
 
     <TextView
         android:id="@+id/tvArti"

@@ -51,7 +51,7 @@ public class Pembayaran extends AppCompatActivity {
         ArrayList<Company> companies = new ArrayList<>();
 
         ArrayList<Product> kantorPos = new ArrayList<>();
-        kantorPos.add(new Product("1. Datang ke loket Kantor Pos terdekat."));
+        kantorPos.add(new Product("1. Datang ke loket Kantor Pos terdekat dengan membawa barang bukti tilang."));
         kantorPos.add(new Product("2. Tunjukan kode Virtual Account ke petugas loket."));
         kantorPos.add(new Product("3. Konfirmasi pembayaran di aplikasi."));
 
@@ -59,7 +59,7 @@ public class Pembayaran extends AppCompatActivity {
         companies.add(pos);
 
         ArrayList<Product> aplikasiPGM = new ArrayList<>();
-        aplikasiPGM.add(new Product("1. Buka aplikasi PGM (POSGIRO Mobile."));
+        aplikasiPGM.add(new Product("1. Buka aplikasi PGM (POSGIRO Mobile)."));
         aplikasiPGM.add(new Product("2. Pilih menu Virtual Account."));
         aplikasiPGM.add(new Product("3. Masukkan kode Virtual Account Anda."));
         aplikasiPGM.add(new Product("4. Selesai."));

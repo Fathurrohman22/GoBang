@@ -8,10 +8,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
-import id.gobang.app.Fragment.Cari;
 import id.gobang.app.R;
 
 public class PosGiro extends AppCompatActivity {
@@ -39,11 +36,18 @@ public class PosGiro extends AppCompatActivity {
         silang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                Cari fragment = new Cari();
-                fragmentTransaction.add(R.id.container_cari, fragment);
+                finish();
             }
         });
+
+//        silang.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                FragmentManager fragmentManager = getSupportFragmentManager();
+//                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//                Cari fragment = new Cari();
+//                fragmentTransaction.add(R.id.container_cari, fragment);
+//            }
+//        });
     }
 }

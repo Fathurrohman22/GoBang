@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="8dp"
-            android:src="@drawable/ic_logo2" />
+            android:src="@drawable/logogobangpos" />
 
     </RelativeLayout>
 
@@ -65,7 +65,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:text="GoBang Payment"
+                        android:text="GoBangPos Payment"
                         android:textAlignment="center"
                         android:textColor="@color/colorPrimary"
                         android:textSize="20sp"
