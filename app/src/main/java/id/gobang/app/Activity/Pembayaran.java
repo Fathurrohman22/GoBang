@@ -40,6 +40,8 @@ public class Pembayaran extends AppCompatActivity {
     TextView tvNominalAntar;
     TextView tvBiayaAdministrasi;
     RecyclerView recyclerView;
+    ImageView btnCopyVA;
+    ImageView btnCopyNominal;
     private Context context = Pembayaran.this;
 
     @Override
@@ -79,6 +81,8 @@ public class Pembayaran extends AppCompatActivity {
         salin = findViewById(R.id.SalinRek);
         aplikasi = findViewById(R.id.aplikasiPGM);
         btnDownloadPGM = findViewById(R.id.btnDownloadPGM);
+        btnCopyVA = findViewById(R.id.btnCopyVA);
+        btnCopyNominal = findViewById(R.id.btnCopyNominal);
 
         tvNominalDendaTilang = findViewById(R.id.tvNominalDendaTilang);
         tvNominalAntar = findViewById(R.id.tvNominalAntar);
@@ -89,12 +93,16 @@ public class Pembayaran extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerViewMetode);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
         virtual.setText(getIntent().getStringExtra("no_va"));
         tvTotalPembayaran.setText("Rp " + new Bantuan(context)
-                .formatHarga(String.valueOf(Integer.parseInt(Objects.requireNonNull(getIntent().getStringExtra("denda_tilang"))) +
-                        Integer.parseInt(Objects.requireNonNull(getIntent().getStringExtra("biaya_antar"))) +
-                        Integer.parseInt(Objects.requireNonNull(getIntent().getStringExtra("biaya_administrasi"))))));
+                .formatHarga(
+                        String.valueOf(
+                                Integer.parseInt(Objects.requireNonNull(getIntent().getStringExtra("denda_tilang"))) +
+                                Integer.parseInt(Objects.requireNonNull(getIntent().getStringExtra("biaya_antar"))) +
+                                Integer.parseInt(Objects.requireNonNull(getIntent().getStringExtra("biaya_administrasi")))
+                        )
+                )
+        );
 
         tvNominalDendaTilang.setText("Rp " + new Bantuan(context).formatHarga(getIntent().getStringExtra("denda_tilang")));
         tvNominalAntar.setText("Rp " + new Bantuan(context).formatHarga(getIntent().getStringExtra("biaya_antar")));
@@ -138,6 +146,36 @@ public class Pembayaran extends AppCompatActivity {
             }
         });
 
+        btnCopyVA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clipData = ClipData.newPlainText("noVA", virtual.getText().toString());
+                if (clipboardManager != null) {
+                    clipboardManager.setPrimaryClip(clipData);
+                }
+                clipData.getDescription();
+                new Bantuan(context).toastLong("Nomor Virtual Account Berhasil Disalin");
+            }
+        });
+
+        btnCopyNominal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clipData = ClipData.newPlainText("totalPembayaran", String.valueOf(
+                        Integer.parseInt(Objects.requireNonNull(getIntent().getStringExtra("denda_tilang"))) +
+                                Integer.parseInt(Objects.requireNonNull(getIntent().getStringExtra("biaya_antar"))) +
+                                Integer.parseInt(Objects.requireNonNull(getIntent().getStringExtra("biaya_administrasi")))
+                ));
+                if (clipboardManager != null) {
+                    clipboardManager.setPrimaryClip(clipData);
+                }
+                clipData.getDescription();
+                new Bantuan(context).toastLong("Total Pembayaran Berhasil Disalin");
+            }
+        });
+
         lanjut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -154,7 +192,7 @@ public class Pembayaran extends AppCompatActivity {
             }
         });
 
-        if(!new Bantuan(context).isAppInstalled("com.posindonesia.giropos")){
+        if (!new Bantuan(context).isAppInstalled("com.posindonesia.giropos")) {
             btnDownloadPGM.setText("DOWNLOAD POS GIRO MOBILE");
         } else {
             btnDownloadPGM.setText("BUKA POS GIRO MOBILE");
@@ -164,7 +202,7 @@ public class Pembayaran extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(new Bantuan(context).isAppInstalled("com.posindonesia.giropos")){
+                if (new Bantuan(context).isAppInstalled("com.posindonesia.giropos")) {
                     Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.posindonesia.giropos");
                     if (launchIntent != null) {
                         startActivity(launchIntent);

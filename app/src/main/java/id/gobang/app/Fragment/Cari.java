@@ -68,6 +68,7 @@ public class Cari extends Fragment {
             public void onClick(View v) {
                 Intent i = new Intent(getActivity(), PosGiro.class);
                 startActivity(i);
+//                new Bantuan(getActivity()).toastLong("awww");
             }
         });
 

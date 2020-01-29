@@ -147,14 +147,30 @@
                         android:textColor="@color/colorBlack"
                         android:layout_marginTop="16dp" />
 
-                    <TextView
-                        android:id="@+id/VirtualAccount"
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/_880800706386890"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/VirtualAccount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/_880800706386890"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/btnCopyVA"
+                            android:layout_width="@dimen/dp_32"
+                            android:layout_height="@dimen/dp_32"
+                            android:src="@drawable/ic_content_copy_black_24dp"
+                            android:layout_alignParentEnd="true"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:layout_centerInParent="true"
+                            android:background="?attr/selectableItemBackground" />
+                    </RelativeLayout>
 
                     <TextView
                         android:id="@+id/SalinRek"
@@ -162,6 +178,7 @@
                         android:layout_height="match_parent"
                         android:text="@string/salin_nomor_virtual_account"
                         android:padding="4dp"
+                        android:visibility="gone"
                         android:clickable="true"
                         android:background="?attr/selectableItemBackground"
                         android:textColor="@color/colorPrimary"
@@ -198,16 +215,33 @@
                         android:textStyle="bold"
                         android:textColor="@color/colorBlack" />
 
-                    <TextView
-                        android:id="@+id/tvTotalPembayaran"
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="8dp"
-                        android:paddingBottom="8dp"
-                        android:text="@string/rp_71_000"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvTotalPembayaran"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:text="@string/rp_71_000"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/btnCopyNominal"
+                            android:layout_width="@dimen/dp_32"
+                            android:layout_height="@dimen/dp_32"
+                            android:src="@drawable/ic_content_copy_black_24dp"
+                            android:layout_alignParentEnd="true"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:layout_centerInParent="true"
+                            android:background="?attr/selectableItemBackground" />
+                    </RelativeLayout>
+
 
                     <TextView
                         android:id="@+id/tvJudulDetail"

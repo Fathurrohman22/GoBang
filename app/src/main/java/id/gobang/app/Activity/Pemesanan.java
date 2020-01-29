@@ -499,7 +499,7 @@ public class Pemesanan extends AppCompatActivity {
         ) {
             new Bantuan(context).swal_error("Masih ada data yang kosong, silahkan lengkapi semua data terlebih dahulu");
         } else {
-            new SweetAlertDialog(Pemesanan.this, SweetAlertDialog.WARNING_TYPE)
+            SweetAlertDialog alertDialog = new SweetAlertDialog(Pemesanan.this, SweetAlertDialog.WARNING_TYPE)
                     .setTitleText("Peringatan")
                     .setContentText("Apakah data yang anda masukkan sudah benar ?")
                     .setConfirmText("Lanjut")
@@ -606,7 +606,13 @@ public class Pemesanan extends AppCompatActivity {
                         public void onClick(SweetAlertDialog sweetAlertDialog) {
                             sweetAlertDialog.dismissWithAnimation();
                         }
-                    }).show();
+                    });
+            alertDialog.show();
+
+            Button confirmButton = alertDialog.findViewById(R.id.confirm_button);
+            Button cancelButton = alertDialog.findViewById(R.id.cancel_button);
+            confirmButton.setBackgroundColor(context.getResources().getColor(R.color.colorPrimary));
+            cancelButton.setBackgroundColor(context.getResources().getColor(R.color.gray_muda));
         }
     }
 
