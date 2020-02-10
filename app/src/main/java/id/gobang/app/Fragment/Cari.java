@@ -13,7 +13,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import id.gobang.app.Activity.Lacak;
-import id.gobang.app.Activity.PosGiro;
 import id.gobang.app.Activity.Tentang;
 import id.gobang.app.R;
 
@@ -38,7 +37,7 @@ public class Cari extends Fragment {
 
         cari = v.findViewById(R.id.cari_card);
         lacak = v.findViewById(R.id.tracking_card);
-        pgm = v.findViewById(R.id.pgm_card);
+//        pgm = v.findViewById(R.id.pgm_card);
 //        carapakai = v.findViewById(R.id.carapakai_card);
 //        carabayar = v.findViewById(R.id.carabayar_card);
         tentang = v.findViewById(R.id.tentang_card);
@@ -63,14 +62,14 @@ public class Cari extends Fragment {
             }
         });
 
-        pgm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getActivity(), PosGiro.class);
-                startActivity(i);
-//                new Bantuan(getActivity()).toastLong("awww");
-            }
-        });
+//        pgm.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i = new Intent(getActivity(), PosGiro.class);
+//                startActivity(i);
+////                new Bantuan(getActivity()).toastLong("awww");
+//            }
+//        });
 
 //        carapakai.setOnClickListener(new View.OnClickListener() {
 //            @Override
