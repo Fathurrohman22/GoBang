@@ -20,7 +20,7 @@ public class DetailData extends AppCompatActivity {
 
     Button lanjut;
     ImageView kembali;
-    TextView id_tilang, nama, alamat, denda, sidang;
+    TextView id_tilang, nama, alamat, denda, sidang, barangbukti, nomorpolisi;
     private Context context = DetailData.this;
 
     @SuppressLint("SetTextI18n")
@@ -34,6 +34,8 @@ public class DetailData extends AppCompatActivity {
         alamat = findViewById(R.id.tvAlamat);
         denda = findViewById(R.id.tvDenda);
         sidang = findViewById(R.id.tvTglSidang);
+        barangbukti = findViewById(R.id.tvBarangBukti);
+        nomorpolisi = findViewById(R.id.tvNoPolisi);
 
         int totalDenda = Integer.parseInt(Objects.requireNonNull(getIntent().getStringExtra("denda"))) + Integer.parseInt(Objects.requireNonNull(getIntent().getStringExtra("biaya_perkara")));
         id_tilang.setText(getIntent().getStringExtra("no_reg_tilang"));

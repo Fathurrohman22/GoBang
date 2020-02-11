@@ -98,15 +98,24 @@ public class Pembayaran extends AppCompatActivity {
                 .formatHarga(
                         String.valueOf(
                                 Integer.parseInt(Objects.requireNonNull(getIntent().getStringExtra("denda_tilang"))) +
-                                Integer.parseInt(Objects.requireNonNull(getIntent().getStringExtra("biaya_antar"))) +
-                                Integer.parseInt(Objects.requireNonNull(getIntent().getStringExtra("biaya_administrasi")))
+                                        Integer.parseInt(Objects.requireNonNull(getIntent().getStringExtra("biaya_antar"))) +
+                                        Integer.parseInt(Objects.requireNonNull(getIntent().getStringExtra("biaya_administrasi")))
                         )
                 )
         );
 
-        tvNominalDendaTilang.setText("Rp " + new Bantuan(context).formatHarga(getIntent().getStringExtra("denda_tilang")));
+        tvNominalDendaTilang.setText("Rp " + new Bantuan(context)
+                .formatHarga(
+                        String.valueOf(
+                                Integer.parseInt(Objects.requireNonNull(getIntent().getStringExtra("denda_tilang"))) +
+                                        Integer.parseInt(Objects.requireNonNull(getIntent().getStringExtra("biaya_administrasi")))
+                        )
+                )
+        );
+
+//        tvNominalDendaTilang.setText("Rp " + new Bantuan(context).formatHarga(getIntent().getStringExtra("denda_tilang")));
         tvNominalAntar.setText("Rp " + new Bantuan(context).formatHarga(getIntent().getStringExtra("biaya_antar")));
-        tvBiayaAdministrasi.setText("Rp " + new Bantuan(context).formatHarga(getIntent().getStringExtra("biaya_administrasi")));
+//        tvBiayaAdministrasi.setText("Rp " + new Bantuan(context).formatHarga(getIntent().getStringExtra("biaya_administrasi")));
 
 
         String expired = getIntent().getStringExtra("waktu_expired");
