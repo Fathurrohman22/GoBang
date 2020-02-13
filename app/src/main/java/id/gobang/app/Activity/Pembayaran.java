@@ -86,7 +86,6 @@ public class Pembayaran extends AppCompatActivity {
 
         tvNominalDendaTilang = findViewById(R.id.tvNominalDendaTilang);
         tvNominalAntar = findViewById(R.id.tvNominalAntar);
-        tvBiayaAdministrasi = findViewById(R.id.tvBiayaAdministrasi);
 
         tvTotalPembayaran = findViewById(R.id.tvTotalPembayaran);
         CountdownView mCvCountdownView = findViewById(R.id.countdown);
