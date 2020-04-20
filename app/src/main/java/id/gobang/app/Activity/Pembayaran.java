@@ -39,6 +39,10 @@ public class Pembayaran extends AppCompatActivity {
     TextView tvNominalDendaTilang;
     TextView tvNominalAntar;
     TextView tvBiayaAdministrasi;
+    TextView tvNama;
+    TextView tvNoTilang;
+    TextView tvBarangBukti;
+    TextView tvNoPolisi;
     RecyclerView recyclerView;
     ImageView btnCopyVA;
     ImageView btnCopyNominal;
@@ -84,6 +88,11 @@ public class Pembayaran extends AppCompatActivity {
         btnCopyVA = findViewById(R.id.btnCopyVA);
         btnCopyNominal = findViewById(R.id.btnCopyNominal);
 
+        tvNama = findViewById(R.id.tvNama);
+        tvNoTilang = findViewById(R.id.tvNoTilang);
+        tvBarangBukti = findViewById(R.id.tvBarangBukti);
+        tvNoPolisi = findViewById(R.id.tvNoPolisi);
+
         tvNominalDendaTilang = findViewById(R.id.tvNominalDendaTilang);
         tvNominalAntar = findViewById(R.id.tvNominalAntar);
 
@@ -112,9 +121,13 @@ public class Pembayaran extends AppCompatActivity {
                 )
         );
 
-//        tvNominalDendaTilang.setText("Rp " + new Bantuan(context).formatHarga(getIntent().getStringExtra("denda_tilang")));
         tvNominalAntar.setText("Rp " + new Bantuan(context).formatHarga(getIntent().getStringExtra("biaya_antar")));
 //        tvBiayaAdministrasi.setText("Rp " + new Bantuan(context).formatHarga(getIntent().getStringExtra("biaya_administrasi")));
+
+        tvNama.setText(getIntent().getStringExtra("nama_terpidana"));
+        tvNoTilang.setText(getIntent().getStringExtra("no_reg_tilang"));
+        tvBarangBukti.setText(getIntent().getStringExtra("barang_bukti"));
+        tvNoPolisi.setText(getIntent().getStringExtra("nomor_polisi"));
 
 
         String expired = getIntent().getStringExtra("waktu_expired");

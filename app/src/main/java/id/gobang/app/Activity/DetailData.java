@@ -43,6 +43,8 @@ public class DetailData extends AppCompatActivity {
         alamat.setText(getIntent().getStringExtra("alamat_terpidana"));
         denda.setText("Rp " + new Bantuan(context).formatHarga(String.valueOf(totalDenda)));
         sidang.setText(getIntent().getStringExtra("tgl_putusan"));
+        barangbukti.setText(getIntent().getStringExtra("barang_bukti"));
+        nomorpolisi.setText(getIntent().getStringExtra("nomor_polisi"));
 
         lanjut = findViewById(R.id.btnLanjut);
         kembali = findViewById(R.id.btnClose);

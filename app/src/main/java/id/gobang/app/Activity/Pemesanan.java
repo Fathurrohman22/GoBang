@@ -535,6 +535,10 @@ public class Pemesanan extends AppCompatActivity {
                                                             Integer.parseInt(data.getString("nominal_perkara"))));
                                                     intent.putExtra("biaya_antar", data.getString("nominal_pos"));
                                                     intent.putExtra("biaya_administrasi", data.getString("nominal_gobang"));
+                                                    intent.putExtra("nama_terpidana", data.getString("nama_terpidana"));
+                                                    intent.putExtra("no_reg_tilang", data.getString("no_reg_tilang"));
+                                                    intent.putExtra("barang_bukti", data.getString("barang_bukti"));
+                                                    intent.putExtra("nomor_polisi", data.getString("nomor_polisi"));
                                                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                                     startActivity(intent);
                                                 } else {

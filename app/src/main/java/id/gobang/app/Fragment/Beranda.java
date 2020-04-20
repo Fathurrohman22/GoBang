@@ -91,6 +91,8 @@ public class Beranda extends Fragment {
                                 i.putExtra("posisi", data.getString("posisi"));
                                 i.putExtra("created_at", data.getString("created_at"));
                                 i.putExtra("updated_at", data.getString("updated_at"));
+                                i.putExtra("barang_bukti", data.getString("barang_bukti"));
+                                i.putExtra("nomor_polisi", data.getString("nomor_polisi"));
                                 startActivity(i);
                             } else if (response_code == 402) {
                                 JSONObject data = object.getJSONObject("data");
@@ -102,6 +104,10 @@ public class Beranda extends Fragment {
                                         Integer.parseInt(data.getString("nominal_perkara"))));
                                 intent.putExtra("biaya_antar", data.getString("nominal_pos"));
                                 intent.putExtra("biaya_administrasi", data.getString("nominal_gobang"));
+                                intent.putExtra("nama_terpidana", data.getString("nama_terpidana"));
+                                intent.putExtra("no_reg_tilang", data.getString("no_reg_tilang"));
+                                intent.putExtra("barang_bukti", data.getString("barang_bukti"));
+                                intent.putExtra("nomor_polisi", data.getString("nomor_polisi"));
                                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivity(intent);
                             } else if (response_code == 200) {

@@ -106,7 +106,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/nomor_tilang"
                         android:textColor="@color/colorBlack"
-                        android:textSize="10sp"
+                        android:textSize="12sp"
                         tools:ignore="SmallSp" />
 
                     <TextView
@@ -124,7 +124,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/nama_penerima"
                         android:textColor="@color/colorBlack"
-                        android:textSize="10sp"
+                        android:textSize="12sp"
                         tools:ignore="SmallSp" />
 
                     <EditText
@@ -144,7 +144,7 @@
                         android:layout_marginTop="10dp"
                         android:text="@string/provinsi"
                         android:textColor="@color/colorBlack"
-                        android:textSize="10sp"
+                        android:textSize="12sp"
                         tools:ignore="SmallSp" />
 
                     <gr.escsoft.michaelprimez.searchablespinner.SearchableSpinner
@@ -169,7 +169,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/kabupaten_kota"
                         android:textColor="@color/colorBlack"
-                        android:textSize="10sp"
+                        android:textSize="12sp"
                         tools:ignore="SmallSp" />
 
                     <gr.escsoft.michaelprimez.searchablespinner.SearchableSpinner
@@ -193,7 +193,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/kecamatan"
                         android:textColor="@color/colorBlack"
-                        android:textSize="10sp"
+                        android:textSize="12sp"
                         tools:ignore="SmallSp" />
 
                     <gr.escsoft.michaelprimez.searchablespinner.SearchableSpinner
@@ -217,7 +217,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/desa"
                         android:textColor="@color/colorBlack"
-                        android:textSize="10sp"
+                        android:textSize="12sp"
                         tools:ignore="SmallSp" />
 
                     <gr.escsoft.michaelprimez.searchablespinner.SearchableSpinner
@@ -241,7 +241,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/detail_alamat"
                         android:textColor="@color/colorBlack"
-                        android:textSize="10sp"
+                        android:textSize="12sp"
                         tools:ignore="SmallSp" />
 
                     <EditText
@@ -259,7 +259,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/kode_pos"
                         android:textColor="@color/colorBlack"
-                        android:textSize="10sp"
+                        android:textSize="12sp"
                         tools:ignore="SmallSp" />
 
                     <EditText
@@ -279,7 +279,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/nomor_handphone"
                         android:textColor="@color/colorBlack"
-                        android:textSize="10sp"
+                        android:textSize="12sp"
                         tools:ignore="SmallSp" />
 
                     <EditText
