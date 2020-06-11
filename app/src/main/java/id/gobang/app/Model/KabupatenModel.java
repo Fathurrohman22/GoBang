@@ -1,7 +1,7 @@
 package id.gobang.app.Model;
 
 public class KabupatenModel {
-    private String id, id_prov, nama;
+    private String id, id_provinsi, nama;
 
     public String getId() {
         return id;
@@ -12,11 +12,11 @@ public class KabupatenModel {
     }
 
     public String getId_prov() {
-        return id_prov;
+        return id_provinsi;
     }
 
     public void setId_prov(String id_prov) {
-        this.id_prov = id_prov;
+        this.id_provinsi = id_prov;
     }
 
     public String getNama() {

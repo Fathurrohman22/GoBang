@@ -197,9 +197,9 @@ public class Pemesanan extends AppCompatActivity {
                         listProvinsi.clear();
                         try {
                             JSONObject object = new JSONObject(response);
-                            boolean isError = object.getBoolean("error");
-                            if (!isError) {
-                                JSONArray jsonArray = object.getJSONArray("semuaprovinsi");
+//                            boolean isError = object.getBoolean("error");
+//                            if (!isError) {
+                                JSONArray jsonArray = object.getJSONArray("provinsi");
                                 for (int i = 0; i < jsonArray.length(); i++) {
                                     JSONObject jsonObject = jsonArray.getJSONObject(i);
                                     ProvinsiModel provinsiModel = new ProvinsiModel();
@@ -256,9 +256,9 @@ public class Pemesanan extends AppCompatActivity {
                                     }
                                 });
 
-                            } else {
-                                new Bantuan(context).toastLong(object.getString("message"));
-                            }
+//                            } else {
+//                                new Bantuan(context).toastLong(object.getString("message"));
+//                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
                             new Bantuan(context).toastLong(e.getMessage());
@@ -284,14 +284,14 @@ public class Pemesanan extends AppCompatActivity {
                         kabupaten.clear();
                         try {
                             JSONObject object = new JSONObject(response);
-                            boolean isError = object.getBoolean("error");
-                            if (!isError) {
-                                JSONArray jsonArray = object.getJSONArray("kabupatens");
+//                            boolean isError = object.getBoolean("error");
+//                            if (!isError) {
+                                JSONArray jsonArray = object.getJSONArray("kota_kabupaten");
                                 for (int i = 0; i < jsonArray.length(); i++) {
                                     JSONObject jsonObject = jsonArray.getJSONObject(i);
                                     KabupatenModel kabupatenModel = new KabupatenModel();
                                     kabupatenModel.setId(jsonObject.getString("id"));
-                                    kabupatenModel.setId_prov(jsonObject.getString("id_prov"));
+                                    kabupatenModel.setId_prov(jsonObject.getString("id_provinsi"));
                                     kabupatenModel.setNama(jsonObject.getString("nama"));
                                     kabupaten.add(jsonObject.getString("nama"));
                                     listKabupaten.add(kabupatenModel);
@@ -333,9 +333,9 @@ public class Pemesanan extends AppCompatActivity {
                                     }
                                 });
 
-                            } else {
-                                new Bantuan(context).toastLong(object.getString("message"));
-                            }
+//                            } else {
+//                                new Bantuan(context).toastLong(object.getString("message"));
+//                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
                             new Bantuan(context).toastLong(e.getMessage());
@@ -361,14 +361,14 @@ public class Pemesanan extends AppCompatActivity {
                         kecamatan.clear();
                         try {
                             JSONObject object = new JSONObject(response);
-                            boolean isError = object.getBoolean("error");
-                            if (!isError) {
-                                JSONArray jsonArray = object.getJSONArray("kecamatans");
+//                            boolean isError = object.getBoolean("error");
+//                            if (!isError) {
+                                JSONArray jsonArray = object.getJSONArray("kecamatan");
                                 for (int i = 0; i < jsonArray.length(); i++) {
                                     JSONObject jsonObject = jsonArray.getJSONObject(i);
                                     KecamatanModel kecamatanModel = new KecamatanModel();
                                     kecamatanModel.setId(jsonObject.getString("id"));
-                                    kecamatanModel.setId_kabupaten(jsonObject.getString("id_kabupaten"));
+                                    kecamatanModel.setId_kabupaten(jsonObject.getString("id_kota"));
                                     kecamatanModel.setNama(jsonObject.getString("nama"));
                                     kecamatan.add(jsonObject.getString("nama"));
                                     listKecamatan.add(kecamatanModel);
@@ -405,9 +405,9 @@ public class Pemesanan extends AppCompatActivity {
                                     }
                                 });
 
-                            } else {
-                                new Bantuan(context).toastLong(object.getString("message"));
-                            }
+//                            } else {
+//                                new Bantuan(context).toastLong(object.getString("message"));
+//                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
                             new Bantuan(context).toastLong(e.getMessage());
@@ -433,9 +433,9 @@ public class Pemesanan extends AppCompatActivity {
                         desa.clear();
                         try {
                             JSONObject object = new JSONObject(response);
-                            boolean isError = object.getBoolean("error");
-                            if (!isError) {
-                                JSONArray jsonArray = object.getJSONArray("desas");
+//                            boolean isError = object.getBoolean("error");
+//                            if (!isError) {
+                                JSONArray jsonArray = object.getJSONArray("kelurahan");
                                 for (int i = 0; i < jsonArray.length(); i++) {
                                     JSONObject jsonObject = jsonArray.getJSONObject(i);
                                     DesaModel desaModel = new DesaModel();
@@ -468,9 +468,9 @@ public class Pemesanan extends AppCompatActivity {
                                     }
                                 });
 
-                            } else {
-                                new Bantuan(context).toastLong(object.getString("message"));
-                            }
+//                            } else {
+//                                new Bantuan(context).toastLong(object.getString("message"));
+//                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
                             new Bantuan(context).toastLong(e.getMessage());
