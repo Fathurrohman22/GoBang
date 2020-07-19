@@ -7,7 +7,8 @@ public class API {
 
 //    public static final String KEY = "gobangapp";
 //    private static final String INTI_URL = "http://api.gobang-dev.kejari-purwokerto.go.id/";
-    private static final String INTI_URL = "http://kejari-purwokerto.kejaksaan.go.id/gobang/api/";
+//    private static final String INTI_URL = "http://kejari-purwokerto.kejaksaan.go.id/gobang/api/";
+    private static final String INTI_URL = "http://api.gobang.id/";
     private static final String REQUEST = INTI_URL + "request/";
     public static final String URL_CEK_DATA = REQUEST + "cek_data";
     public static final String URL_PERMINTAAN = REQUEST + "add_permintaan";
